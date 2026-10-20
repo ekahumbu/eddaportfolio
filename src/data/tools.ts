@@ -25,6 +25,11 @@ export const tools: Tool[] = [
   { name: "Slack", group: "Coordination", status: "TODO:" },
   { name: "Google Workspace", group: "Coordination", status: "TODO:" },
   { name: "Microsoft 365", group: "Coordination", status: "TODO:" },
+  { name: "Microsoft Teams", group: "Coordination", status: "TODO:" },
+  { name: "Outlook", group: "Coordination", status: "TODO:" },
+  { name: "OneDrive", group: "Coordination", status: "TODO:" },
+  { name: "Word", group: "Coordination", status: "TODO:" },
+  { name: "PowerPoint", group: "Coordination", status: "TODO:" },
   { name: "Calendly", group: "Coordination", status: "TODO:" },
   { name: "Loom", group: "Coordination", status: "TODO:" },
 
@@ -36,6 +41,7 @@ export const tools: Tool[] = [
   { name: "Power Automate", group: "Operations", status: "TODO:" },
   { name: "SharePoint", group: "Operations", status: "TODO:" },
   { name: "Canva", group: "Operations", status: "daily" },
+  { name: "Google Forms", group: "Operations", status: "TODO:" },
 
   // Analysis
   { name: "Excel", group: "Analysis", status: "TODO:" },
