@@ -1,0 +1,79 @@
+---
+// One sample task as a card. Every card uses this same layout.
+import type { CollectionEntry } from "astro:content";
+import { tracks } from "../data/site";
+
+interface Props {
+  task: CollectionEntry<"tasks">;
+}
+const { task } = Astro.props;
+const d = task.data;
+
+// Tracks this task is evidence for: its own role plus any in alsoShows.
+const shows = [d.role, ...d.alsoShows];
+const trackSlug = tracks.find((t) => t.name === d.role)?.slug;
+---
+
+<li class="card" data-tracks={shows.join("|")}>
+  <p class="tag" data-track={trackSlug}>
+    {d.role}
+    {d.draft && <span class="draft"> · Draft</span>}
+  </p>
+  <h3><a href={`/tasks/${task.id}`}>{d.title}</a></h3>
+  <p class="summary">{d.summary}</p>
+  <p class="outcome">{d.outcome}</p>
+  <dl class="facts label">
+    <div><dt>Time</dt><dd>{d.timeTaken}</dd></div>
+    <div><dt>Tools</dt><dd>{d.tools.join(", ")}</dd></div>
+  </dl>
+  {d.aiTools.length > 0 && <p class="ai label">AI used: {d.aiTools.join(", ")}</p>}
+  <ul class="skills label">
+    {d.skills.map((s) => <li>{s}</li>)}
+  </ul>
+</li>
+
+<style>
+  .card {
+    list-style: none;
+    border: 1px solid var(--rule);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .card[hidden] { display: none; }
+  h3 { font-size: 1.5rem; margin: 0; }
+  h3 a { color: var(--ink); text-decoration: none; }
+  h3 a:hover { text-decoration: underline; }
+  p { margin: 0; }
+  .summary { color: var(--ink); }
+  .outcome { border-left: 3px solid var(--accent); padding-left: 0.75rem; font-weight: 600; }
+
+  /* Track tag: text label plus a small shape, so it never relies on colour. */
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .tag::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border: 2px solid var(--accent);
+    flex: none;
+  }
+  .tag[data-track="executive-support"]::before { border-radius: 0; }          /* square */
+  .tag[data-track="operations"]::before { border-radius: 50%; }               /* circle */
+  .tag[data-track="analyst"]::before { transform: rotate(45deg); }            /* diamond */
+
+  .facts { margin: 0.25rem 0 0; display: grid; gap: 0.15rem; }
+  .facts div { display: flex; gap: 0.5rem; }
+  .facts dt { min-width: 3.5rem; }
+  .facts dd { margin: 0; color: var(--ink); }
+  .ai { opacity: 0.85; }
+  .skills { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0.25rem 0 0; list-style: none; }
+  .skills li { border: 1px solid var(--rule); padding: 0 0.5rem; }
+</style>

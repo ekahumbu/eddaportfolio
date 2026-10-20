@@ -1,0 +1,89 @@
+---
+// The task grid with filter buttons.
+// Without JavaScript every task shows and the buttons stay hidden.
+// With JavaScript the buttons appear and filter the grid instantly.
+import type { CollectionEntry } from "astro:content";
+import { tracks } from "../data/site";
+import TaskCard from "./TaskCard.astro";
+
+interface Props {
+  tasks: CollectionEntry<"tasks">[];
+  firstTrack?: string; // track name to list first (used by /for/[track] pages)
+}
+const { tasks, firstTrack } = Astro.props;
+
+// Order: the chosen track first, then featured tasks, then newest.
+const rank = (t: CollectionEntry<"tasks">) =>
+  (firstTrack && [t.data.role, ...t.data.alsoShows].includes(firstTrack as never) ? 0 : 2) +
+  (t.data.featured ? 0 : 1);
+const sorted = [...tasks].sort(
+  (a, b) => rank(a) - rank(b) || b.data.date.getTime() - a.data.date.getTime(),
+);
+
+// How many tasks count as evidence for each track (own role or alsoShows).
+const count = (name: string) => tasks.filter((t) => [t.data.role, ...t.data.alsoShows].includes(name as never)).length;
+---
+
+<section id="tasks" aria-labelledby="tasks-heading">
+  <h2 id="tasks-heading">Sample tasks</h2>
+
+  {sorted.length === 0 ? (
+    <p>New sample tasks are on the way.</p>
+  ) : (
+    <>
+      <div class="filters" role="group" aria-label="Filter tasks by track" hidden>
+        <button type="button" data-filter="all" aria-pressed="true">All ({tasks.length})</button>
+        {tracks.map((t) => (
+          <button type="button" data-filter={t.name} aria-pressed="false">{t.name} ({count(t.name)})</button>
+        ))}
+      </div>
+      <p class="label" id="filter-status" aria-live="polite"></p>
+      <ul class="grid">
+        {sorted.map((task) => <TaskCard task={task} />)}
+      </ul>
+    </>
+  )}
+</section>
+
+<style>
+  .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .filters[hidden] { display: none; }
+  button {
+    font: inherit;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--rule);
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+  }
+  button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+  .grid { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }
+  @media (min-width: 768px) { .grid { grid-template-columns: 1fr 1fr; } }
+</style>
+
+<script>
+  // Filter: show only cards whose data-tracks includes the chosen track.
+  const group = document.querySelector<HTMLElement>(".filters");
+  if (group) {
+    group.hidden = false; // JavaScript works, so reveal the buttons
+    const buttons = group.querySelectorAll<HTMLButtonElement>("button");
+    const cards = document.querySelectorAll<HTMLElement>(".grid .card");
+    const status = document.getElementById("filter-status");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const choice = button.dataset.filter ?? "all";
+        let shown = 0;
+        cards.forEach((card) => {
+          const match = choice === "all" || (card.dataset.tracks ?? "").split("|").includes(choice);
+          card.hidden = !match;
+          if (match) shown++;
+        });
+        buttons.forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+        if (status) status.textContent = choice === "all" ? "" : `Showing ${shown} ${choice} task${shown === 1 ? "" : "s"}`;
+      });
+    });
+  }
+</script>
