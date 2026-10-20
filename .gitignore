@@ -26,3 +26,6 @@ pnpm-debug.log*
 # never commit (see CLAUDE.md)
 .env.*
 /private/
+
+# raw working files, never commit (reviewed first, then moved to public/samples/ only when clean)
+/Portolio Workings/
