@@ -22,10 +22,19 @@ const { title, description } = Astro.props;
     <!-- Only the weights the site uses; display=swap shows text straight away. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- media="print" + onload makes the font CSS load without blocking the first paint. -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono&family=Schibsted+Grotesk:wght@400;600&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono&family=Schibsted+Grotesk:wght@400;600&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
