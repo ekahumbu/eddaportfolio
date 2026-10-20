@@ -46,7 +46,7 @@ export const tools: Tool[] = [
 
   // Analysis
   { name: "Excel", group: "Analysis", status: "TODO:" },
-  { name: "SQL", group: "Analysis", status: "TODO:" },
+  { name: "SQL", group: "Analysis", status: "practising", note: "Querying large databases" },
   { name: "Power BI", group: "Analysis", status: "daily" },
   { name: "Python", group: "Analysis", status: "practising", note: "Cleaning and splitting documents" },
   { name: "Google Sheets", group: "Analysis", status: "practising" },
