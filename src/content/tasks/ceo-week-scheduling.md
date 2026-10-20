@@ -16,7 +16,7 @@ deliverables:
 dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
 date: 2026-10-15
 featured: false
-draft: true
+draft: false
 ---
 ## The brief
 
