@@ -15,6 +15,21 @@ deliverables:
     href: "/samples/leadership-minutes-and-actions/action-tracker.xlsx"
   - label: "Minutes, follow-up email and next agenda (PDF)"
     href: "/samples/leadership-minutes-and-actions/meeting-minutes.pdf"
+cover: "/samples/leadership-minutes-and-actions/previews/minutes-and-actions.webp"
+coverAlt: "One-page leadership meeting minutes with the attendees, six decisions and a table of actions A-031 to A-043 showing owner, due date and status"
+coverWidth: 877
+coverHeight: 1270
+previews:
+  - src: "/samples/leadership-minutes-and-actions/previews/follow-up-email.webp"
+    alt: "Draft follow-up email to the leadership team, marked as not to be sent until approved"
+    caption: "The follow-up email, drafted for Dana's approval"
+    width: 913
+    height: 512
+  - src: "/samples/leadership-minutes-and-actions/previews/questions-for-dana.webp"
+    alt: "Table of questions for Dana with a recommendation for each, such as dates for the actions that had none"
+    caption: "Questions I could not settle myself, with a recommendation for each"
+    width: 868
+    height: 378
 dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
 date: 2026-10-16
 featured: false

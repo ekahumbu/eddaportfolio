@@ -40,12 +40,30 @@ const dateText = d.date.toISOString().slice(0, 10);
       <div><dt>Date</dt><dd><time datetime={dateText}>{dateText}</time></dd></div>
     </dl>
 
-    {d.cover && <img class="cover" src={d.cover} alt={d.coverAlt} width="880" loading="lazy" decoding="async" />}
+    {d.cover && (
+      <a class="cover-link" href={d.cover} aria-label="Open the full-size image">
+        <img class="cover" src={d.cover} alt={d.coverAlt} width={d.coverWidth} height={d.coverHeight} decoding="async" />
+      </a>
+    )}
 
     <section aria-labelledby="brief-heading" class="brief">
       <h2 id="brief-heading">As it arrived</h2>
       <blockquote>{d.brief}</blockquote>
     </section>
+
+    {d.previews.length > 0 && (
+      <section aria-labelledby="look-heading" class="look">
+        <h2 id="look-heading">Quick look</h2>
+        {d.previews.map((p) => (
+          <figure>
+            <a href={p.src} aria-label={`Open the full-size image: ${p.caption}`}>
+              <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" decoding="async" />
+            </a>
+            <figcaption class="label">{p.caption}</figcaption>
+          </figure>
+        ))}
+      </section>
+    )}
 
     {d.deliverables.length > 0 && (
       <section aria-labelledby="files-heading">
@@ -78,7 +96,10 @@ const dateText = d.date.toISOString().slice(0, 10);
   .facts div { display: flex; gap: 0.75rem; }
   .facts dt { min-width: 6.5rem; }
   .facts dd { margin: 0; color: var(--ink); }
-  .cover { max-width: 100%; height: auto; border: 1px solid var(--rule); margin-bottom: 1.5rem; }
+  .cover, .look img { display: block; max-width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+  .cover-link { display: block; margin-bottom: 1.5rem; }
+  .look figure { margin: 0 0 1.5rem; }
+  .look figcaption { margin-top: 0.4rem; }
   blockquote { margin: 0 0 1rem; padding-left: 1rem; border-left: 3px solid var(--rule); color: var(--muted); }
   /* Markdown content is injected by Astro, so these need :global to reach it. */
   .body :global(h2) { margin-top: 2rem; }

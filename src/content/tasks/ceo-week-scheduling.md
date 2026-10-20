@@ -13,6 +13,16 @@ outcome: "Logged 18 conflicts across nine requests, settled them in 14 documente
 deliverables:
   - label: "Scheduling workbook (Excel)"
     href: "/samples/ceo-week-scheduling/ceo-week-scheduling.xlsx"
+cover: "/samples/ceo-week-scheduling/previews/adjusted-calendar.webp"
+coverAlt: "Adjusted calendar for Monday 5 to Friday 9, with moved or new meetings shaded green and unchanged meetings shaded blue"
+coverWidth: 1277
+coverHeight: 1429
+previews:
+  - src: "/samples/ceo-week-scheduling/previews/summary-email.webp"
+    alt: "The email to the CEO: the TrailMart call is protected, the other changes are confirmed, and two items need her approval"
+    caption: "The one short summary email to Dana, 186 words"
+    width: 1064
+    height: 663
 dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
 date: 2026-10-15
 featured: false

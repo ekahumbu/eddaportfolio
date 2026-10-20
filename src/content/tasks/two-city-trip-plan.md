@@ -15,6 +15,21 @@ deliverables:
     href: "/samples/two-city-trip-plan/trip-plan.xlsx"
   - label: "Decision log (PDF)"
     href: "/samples/two-city-trip-plan/trip-decision-log.pdf"
+cover: "/samples/two-city-trip-plan/previews/itinerary.webp"
+coverAlt: "Itinerary table for the recommended plan, from Monday 2 to Thursday 5 November, with local time, Eastern time, details and confirmation for each leg"
+coverWidth: 1376
+coverHeight: 939
+previews:
+  - src: "/samples/two-city-trip-plan/previews/cost-table.webp"
+    alt: "Cost table comparing the recommended plan at $1,466 and the fallback plan at $1,619 against the $1,600 budget, with a second-method check that both totals tie out"
+    caption: "Cost table against the $1,600 budget, checked a second way"
+    width: 1376
+    height: 827
+  - src: "/samples/two-city-trip-plan/previews/summary-for-dana.webp"
+    alt: "Summary for Dana: the plan day by day, the total, and two decisions she needs to make"
+    caption: "The summary for Dana: 150 words, two decisions"
+    width: 1345
+    height: 434
 dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). Flights, hotels and prices are fictional. The work is mine."
 date: 2026-10-17
 featured: false

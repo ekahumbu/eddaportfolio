@@ -30,6 +30,13 @@ const tasks = defineCollection({
       deliverables: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
       cover: z.string().optional(),
       coverAlt: z.string().optional(),
+      // Pixel size of the cover image, so the page reserves its space and doesn't jump while loading.
+      coverWidth: z.number().optional(),
+      coverHeight: z.number().optional(),
+      // "Quick look" images for readers who won't open the files. Same 80 KB WebP rule as the cover.
+      previews: z
+        .array(z.object({ src: z.string(), alt: z.string().min(1), caption: z.string(), width: z.number(), height: z.number() }))
+        .default([]),
       dataSource: z.string().min(1),
       date: z.coerce.date(),
       featured: z.boolean().default(false),

@@ -15,6 +15,16 @@ deliverables:
     href: "/samples/sales-export-dashboard/kpi-dashboard.xlsx"
   - label: "One-page dashboard (PDF)"
     href: "/samples/sales-export-dashboard/kpi-dashboard.pdf"
+cover: "/samples/sales-export-dashboard/previews/dashboard.webp"
+coverAlt: "One-page Q3 dashboard with three 'So what' notes, a budget-by-channel table and chart, the DTC returns trend, on-time shipping by channel and each channel's share of sales"
+coverWidth: 1400
+coverHeight: 896
+previews:
+  - src: "/samples/sales-export-dashboard/previews/budget-by-channel.webp"
+    alt: "Close-up of the budget table and bar chart: Q3 sales of $1,642,012 against a budget of $1,664,615 for the weeks reported, 1.4 percent under, with TrailMart 6.8 percent under and DTC 5.1 percent over"
+    caption: "Close-up: budget by channel, with the TrailMart decimal-slip scenario shown separately"
+    width: 1396
+    height: 669
 dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
 date: 2026-10-16
 featured: false
