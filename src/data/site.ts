@@ -1,10 +1,23 @@
 // The single list of tracks. Everything (filters, /for/[track] pages, the "role"
 // field in task files) is built from this array. To add a track back later,
 // add one entry here.
+// heroLine is the headline on that track's page, /for/<slug>.
 export const tracks = [
-  { slug: "executive-support", name: "Executive support" },
-  { slug: "operations", name: "Operations" },
-  { slug: "analyst", name: "Analyst" },
+  {
+    slug: "executive-support",
+    name: "Executive support",
+    heroLine: "Calendars, inboxes and meeting packs that stay organised and checked.",
+  },
+  {
+    slug: "operations",
+    name: "Operations",
+    heroLine: "Processes, trackers and handoffs that keep work moving.",
+  },
+  {
+    slug: "analyst",
+    name: "Analyst",
+    heroLine: "Messy data turned into clean reports a team can act on.",
+  },
 ] as const;
 
 export type Track = (typeof tracks)[number];

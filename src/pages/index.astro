@@ -1,26 +1,5 @@
 ---
-import Base from "../layouts/Base.astro";
-import Hero from "../components/Hero.astro";
-import TaskGrid from "../components/TaskGrid.astro";
-import ToolStack from "../components/ToolStack.astro";
-import AiUse from "../components/AiUse.astro";
-import HowIWork from "../components/HowIWork.astro";
-import BuildLog from "../components/BuildLog.astro";
-import About from "../components/About.astro";
-import Contact from "../components/Contact.astro";
-import { getTasks, getLog, getTools } from "../lib/content";
-
-// Loading the content runs the build checks (see src/lib/content.ts).
-const [tasks, log, tools] = await Promise.all([getTasks(), getLog(), getTools()]);
+import HomePage from "../components/HomePage.astro";
 ---
 
-<Base title="Edda | Sample tasks" description="Sample tasks showing work that keeps moving, organised and checked.">
-  <Hero latest={log[0]} />
-  <TaskGrid tasks={tasks} />
-  <ToolStack tools={tools} tasks={tasks} />
-  <AiUse />
-  <HowIWork />
-  <BuildLog entries={log} limit={3} />
-  <About />
-  <Contact />
-</Base>
+<HomePage />

@@ -1,0 +1,14 @@
+---
+// One page per track, built from the list in src/data/site.ts: /for/executive-support,
+// /for/operations, /for/analyst. Adding a track there adds its page here.
+import HomePage from "../../components/HomePage.astro";
+import { tracks } from "../../data/site";
+
+export function getStaticPaths() {
+  return tracks.map((track) => ({ params: { track: track.slug }, props: { track } }));
+}
+
+const { track } = Astro.props;
+---
+
+<HomePage track={track} />
