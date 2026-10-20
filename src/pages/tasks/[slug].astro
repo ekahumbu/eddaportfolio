@@ -1,0 +1,87 @@
+---
+// A dynamic route: the [slug] in the file name is a placeholder. getStaticPaths()
+// tells Astro which pages to build, one per task file, at /tasks/<slug>.
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { getTasks } from "../../lib/content";
+import { tracks } from "../../data/site";
+
+export async function getStaticPaths() {
+  const tasks = await getTasks();
+  return tasks.map((task) => ({ params: { slug: task.id }, props: { task } }));
+}
+
+const { task } = Astro.props;
+const d = task.data;
+const { Content } = await render(task); // the Markdown body (the four headings)
+const trackSlug = tracks.find((t) => t.name === d.role)?.slug;
+const shows = [d.role, ...d.alsoShows];
+const dateText = d.date.toISOString().slice(0, 10);
+---
+
+<Base title={`${d.title} | Edda`} description={d.summary}>
+  <p class="back label"><a href="/#tasks">&larr; All sample tasks</a></p>
+
+  {d.draft && <p class="draft-note label">Draft: only visible while developing.</p>}
+
+  <article>
+    <header>
+      <p class="tag label" data-track={trackSlug}>{shows.join(" · ")}</p>
+      <h1>{d.title}</h1>
+      <p class="lead">{d.summary}</p>
+      <p class="outcome">{d.outcome}</p>
+    </header>
+
+    <dl class="facts label">
+      <div><dt>Time taken</dt><dd>{d.timeTaken}</dd></div>
+      <div><dt>Tools</dt><dd>{d.tools.join(", ")}</dd></div>
+      {d.aiTools.length > 0 && <div><dt>AI used</dt><dd>{d.aiTools.join(", ")}</dd></div>}
+      <div><dt>Skills</dt><dd>{d.skills.join(", ")}</dd></div>
+      <div><dt>Date</dt><dd><time datetime={dateText}>{dateText}</time></dd></div>
+    </dl>
+
+    {d.cover && <img class="cover" src={d.cover} alt={d.coverAlt} width="880" loading="lazy" decoding="async" />}
+
+    <section aria-labelledby="brief-heading" class="brief">
+      <h2 id="brief-heading">The brief, as it arrived</h2>
+      <blockquote>{d.brief}</blockquote>
+    </section>
+
+    {d.deliverables.length > 0 && (
+      <section aria-labelledby="files-heading">
+        <h2 id="files-heading">Deliverables</h2>
+        <ul>
+          {d.deliverables.map((f) => <li><a href={f.href}>{f.label}</a></li>)}
+        </ul>
+      </section>
+    )}
+
+    <div class="body"><Content /></div>
+
+    {d.aiTools.length > 0 && (
+      <section aria-labelledby="ai-heading">
+        <h2 id="ai-heading">How I used AI</h2>
+        <p>{d.aiNote}</p>
+      </section>
+    )}
+
+    <footer class="label">Data: {d.dataSource}</footer>
+  </article>
+</Base>
+
+<style>
+  .back { margin: 1.5rem 0 1rem; }
+  .draft-note { border: 1px dashed var(--muted); padding: 0.5rem 0.75rem; }
+  .lead { font-size: 1.25rem; }
+  .outcome { border-left: 3px solid var(--accent); padding-left: 0.75rem; font-weight: 600; }
+  .facts { display: grid; gap: 0.25rem; margin: 1.5rem 0; padding: 1rem 0; border-block: 1px solid var(--rule); }
+  .facts div { display: flex; gap: 0.75rem; }
+  .facts dt { min-width: 6.5rem; }
+  .facts dd { margin: 0; color: var(--ink); }
+  .cover { max-width: 100%; height: auto; border: 1px solid var(--rule); margin-bottom: 1.5rem; }
+  blockquote { margin: 0 0 1rem; padding-left: 1rem; border-left: 3px solid var(--rule); color: var(--muted); }
+  /* Markdown content is injected by Astro, so these need :global to reach it. */
+  .body :global(h2) { margin-top: 2rem; }
+  .body :global(ul), .body :global(ol) { padding-left: 1.25rem; }
+  footer { margin: 3rem 0 2rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+</style>
