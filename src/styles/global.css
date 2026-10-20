@@ -1,0 +1,89 @@
+/* Design tokens: change a colour or font here and it changes everywhere. */
+:root {
+  --paper: #f5f6f3;
+  --ink: #1c1f24;
+  --muted: #5d636c;
+  --rule: #dcdfdb;
+  --accent: #2a44c9;
+
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  --measure: 880px; /* widest the content gets */
+  --gutter: 1.25rem;
+  --space: 1rem;
+  color-scheme: light dark;
+}
+
+/* Dark theme follows the visitor's system setting. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121417;
+    --ink: #e9eae6;
+    --muted: #a2a7ae;
+    --rule: #2c3036;
+    --accent: #8fa2ff;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 var(--space);
+}
+h1 { font-size: clamp(2.25rem, 7vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 5vw, 2.25rem); }
+
+p { margin: 0 0 var(--space); }
+
+a { color: var(--accent); text-underline-offset: 0.15em; }
+
+/* Always-visible keyboard focus. */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Small labels and dates. */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -4rem;
+  background: var(--paper);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--rule);
+}
+.skip-link:focus { top: 0.5rem; }
+
+/* One subtle load animation, switched off for people who prefer less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  main { animation: fade-in 0.4s ease-out; }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+}
