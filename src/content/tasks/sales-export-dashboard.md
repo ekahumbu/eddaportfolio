@@ -2,27 +2,29 @@
 title: "Clean a messy sales export and build a one-page dashboard"
 role: "Analyst"
 alsoShows: []
-skills: ["TODO:"]
+skills: ["Data cleaning", "Excel and Power Query", "KPI reporting", "Dashboard design"]
 summary: "A messy weekly sales export cleaned in 11 logged steps, then shown as a one-page dashboard with a covering email."
-brief: "TODO:"
+brief: "I need one page on Q3 for Monday's leadership meeting. Four things: are we on budget by channel, are DTC returns getting worse, is on-time shipping holding up before peak, and which channel is carrying us. Tom's export is messy, so clean it first and tell me what you fixed. Keep it to one page. Monday 8:00 AM ET at the latest."
 timeTaken: "2 h"
 tools: ["Excel"]
 aiTools: ["Claude"]
-aiNote: "TODO:"
+aiNote: "I use Claude in Excel to speed up analysis and building. I direct the work and review everything it produces."
 outcome: "Fixed 11 data problems and showed that, on the weeks reported, Q3 sales were $22,603 (1.4%) under budget."
 deliverables:
   - label: "Dashboard workbook (Excel)"
     href: "/samples/sales-export-dashboard/kpi-dashboard.xlsx"
   - label: "One-page dashboard (PDF)"
     href: "/samples/sales-export-dashboard/kpi-dashboard.pdf"
-dataSource: "TODO:"
+dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
 date: 2026-10-16
 featured: false
 draft: true
 ---
 ## The brief
 
-TODO:
+Four questions, answered in that order, on one page: are we on budget by channel, are DTC returns getting worse, is on-time shipping holding up before peak, and which channel is carrying us. Clean the export first and say what was fixed. Never overwrite the raw data, and flag gaps instead of filling them.
+
+Deadline: Monday 8:00 AM ET at the latest.
 
 ## My approach
 

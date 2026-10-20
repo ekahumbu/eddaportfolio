@@ -2,18 +2,18 @@
 title: "Rebuild a CEO's week after nine conflicting requests"
 role: "Executive support"
 alsoShows: []
-skills: ["TODO:"]
+skills: ["Calendar management", "Prioritisation", "Time zones", "Stakeholder messaging"]
 summary: "Nine requests, 18 clashes and a hard stop: a conflict log, a rebuilt week and the messages to send."
 brief: "It is Sat 3. Nine requests have landed for CEO Dana Whitfield's week of Mon 5. The board chair wants to move the Q3 board meeting to Wed 7, which knocks on to a VP interview, the sales pipeline review and Thursday's deep work."
 timeTaken: "2 h"
 tools: ["Excel"]
 aiTools: ["Claude"]
-aiNote: "TODO:"
+aiNote: "I use Claude in Excel to speed up analysis and building. I direct the work and review everything it produces."
 outcome: "Logged 18 conflicts across nine requests, settled them in 14 documented decisions, and drafted one summary email to the CEO."
 deliverables:
   - label: "Scheduling workbook (Excel)"
     href: "/samples/ceo-week-scheduling/ceo-week-scheduling.xlsx"
-dataSource: "TODO:"
+dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
 date: 2026-10-15
 featured: false
 draft: true

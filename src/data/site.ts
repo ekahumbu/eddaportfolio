@@ -27,7 +27,7 @@ export type TrackName = Track["name"];
 // Anything still "TODO:" shows a visible marker in development and fails the
 // production build, so nothing unfinished goes live.
 export const profile = {
-  name: "Edda",
+  name: "Eddah Dena",
   location: "Nairobi (EAT, UTC+3)",
   hours: "US and UK hours",
   // The one place background is mentioned, phrased as a transferable skill.

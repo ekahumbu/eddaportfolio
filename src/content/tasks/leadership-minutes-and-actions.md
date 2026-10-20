@@ -2,20 +2,20 @@
 title: "Minutes and an action tracker from a broken meeting transcript"
 role: "Executive support"
 alsoShows: []
-skills: ["TODO:"]
+skills: ["Minute-taking", "Action tracking", "Confidentiality", "Clear writing"]
 summary: "A garbled auto-transcript turned into one-page minutes, a dated action tracker and a draft email for approval."
 brief: "It is Mon 12 Oct 2026. The weekly leadership meeting ran 9:30–10:30 AM ET on Teams. My power went out at 9:40 AM, so I worked from the Teams auto-transcript, which had wrong speaker labels and misheard names."
 timeTaken: "About 2 h"
 tools: ["Excel", "Microsoft 365"]
-aiTools: ["NotebookLM"]
-aiNote: "TODO:"
+aiTools: ["Claude"]
+aiNote: "I use Claude in Excel to speed up analysis and building. I direct the work and review everything it produces."
 outcome: "A one-page set of minutes and a 13-item action tracker (5 updated, 8 new), with 4 actions flagged for Dana because their dates were missing or fell on a Sunday."
 deliverables:
   - label: "Action tracker (Excel)"
     href: "/samples/leadership-minutes-and-actions/action-tracker.xlsx"
   - label: "Minutes, follow-up email and next agenda (PDF)"
     href: "/samples/leadership-minutes-and-actions/meeting-minutes.pdf"
-dataSource: "TODO:"
+dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
 date: 2026-10-16
 featured: false
 draft: true

@@ -2,27 +2,29 @@
 title: "Plan a two-stop business trip within a $1,600 budget"
 role: "Executive support"
 alsoShows: []
-skills: ["TODO:"]
+skills: ["Travel planning", "Budget trade-offs", "Time-zone planning", "Contingency planning"]
 summary: "Flights, hotels and rides checked against a traveller's rules, with a cost table, an itinerary and a fallback plan."
-brief: "TODO:"
+brief: "Book whatever makes sense, under $1,600 all-in. I need to be back for my son's school event Friday 6 Nov at 6:00 PM in Charlotte. Send me the plan and anything I need to decide by Monday noon ET."
 timeTaken: "TODO:"
 tools: ["Excel", "Microsoft 365"]
-aiTools: ["Perplexity"]
-aiNote: "TODO:"
+aiTools: ["Claude"]
+aiNote: "I use Claude in Excel to speed up analysis and building. I direct the work and review everything it produces."
 outcome: "The recommended plan costs $1,466 against a $1,600 budget. The fallback plan is $19 over, at $1,619."
 deliverables:
   - label: "Trip workbook (Excel)"
     href: "/samples/two-city-trip-plan/trip-plan.xlsx"
   - label: "Decision log (PDF)"
     href: "/samples/two-city-trip-plan/trip-decision-log.pdf"
-dataSource: "TODO:"
+dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). Flights, hotels and prices are fictional. The work is mine."
 date: 2026-10-17
 featured: false
 draft: true
 ---
 ## The brief
 
-TODO:
+Two stops in the first week of November, leaving from and returning to Charlotte: a spring-assortment meeting with the buyer in Bellevue on Wed 4 Nov, 10:00–11:30 AM PT, and a peak-readiness walk-through at the Reno warehouse on Thu 5 Nov. Home by 6:00 PM on Fri 6 Nov.
+
+The traveller's rules: no flight before 7:00 AM, no overnight flights, aisle seat only, connections of 60 minutes or more, arrive the day before any external meeting, and a hotel within 15 minutes of the meeting when possible. Budget: $1,600 all-in. Decisions due by Monday noon ET.
 
 ## My approach
 

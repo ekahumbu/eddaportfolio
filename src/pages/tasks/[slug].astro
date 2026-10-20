@@ -4,7 +4,7 @@
 import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import { getTasks } from "../../lib/content";
-import { tracks } from "../../data/site";
+import { tracks, profile } from "../../data/site";
 
 export async function getStaticPaths() {
   const tasks = await getTasks();
@@ -19,14 +19,14 @@ const shows = [d.role, ...d.alsoShows];
 const dateText = d.date.toISOString().slice(0, 10);
 ---
 
-<Base title={`${d.title} | Edda`} description={d.summary}>
+<Base title={`${d.title} | ${profile.name}`} description={d.summary}>
   <p class="back label"><a href="/#tasks">&larr; All sample tasks</a></p>
 
   {d.draft && <p class="draft-note label">Draft: only visible while developing.</p>}
 
   <article>
     <header>
-      <p class="tag label" data-track={trackSlug}>{shows.join(" · ")}</p>
+      <p class="tag label" data-track={trackSlug}>{shows.join(" · ")} · Work sample, fictional scenario</p>
       <h1>{d.title}</h1>
       <p class="lead">{d.summary}</p>
       <p class="outcome">{d.outcome}</p>

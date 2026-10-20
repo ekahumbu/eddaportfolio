@@ -11,6 +11,7 @@ import BuildLog from "./BuildLog.astro";
 import About from "./About.astro";
 import Contact from "./Contact.astro";
 import { getTasks, getLog, getTools } from "../lib/content";
+import { profile } from "../data/site";
 
 interface Props {
   track?: { name: string; heroLine: string };
@@ -20,7 +21,7 @@ const { track } = Astro.props;
 // Loading the content runs the build checks (see src/lib/content.ts).
 const [tasks, log, tools] = await Promise.all([getTasks(), getLog(), getTools()]);
 
-const title = track ? `Edda | ${track.name}` : "Edda | Sample tasks";
+const title = track ? `${profile.name} | ${track.name}` : `${profile.name} | Sample tasks`;
 const description = track ? track.heroLine : "Sample tasks showing work that keeps moving, organised and checked.";
 ---
 
