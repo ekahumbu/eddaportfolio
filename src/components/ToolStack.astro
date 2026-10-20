@@ -1,0 +1,71 @@
+---
+// Tools grouped by area, each with a text status chip.
+// A tool that appears in published tasks is "used" and expands (using the built-in
+// <details> element, so it works without JavaScript) to link to those tasks.
+import type { CollectionEntry } from "astro:content";
+import type { ToolView } from "../lib/content";
+import type { ToolGroup } from "../data/tools";
+
+interface Props {
+  tools: ToolView[]; // already sorted: used, daily, practising, started
+  tasks: CollectionEntry<"tasks">[];
+}
+const { tools, tasks } = Astro.props;
+
+const groups: ToolGroup[] = ["Coordination", "Operations", "Analysis", "AI"];
+const titleFor = (slug: string) => tasks.find((t) => t.id === slug)?.data.title ?? slug;
+
+// Words shown on the chip, so status never depends on colour.
+const statusText = (t: ToolView) =>
+  t.status === "used" ? `Used in ${t.taskSlugs.length} task${t.taskSlugs.length === 1 ? "" : "s"}` :
+  t.status === "daily" ? "Used daily" :
+  t.status === "practising" ? "Practising" :
+  t.status === "started" ? "Started" : t.status;
+---
+
+<section id="tools" aria-labelledby="tools-heading">
+  <h2 id="tools-heading">Tool stack</h2>
+  <p>Each status is honest: "Used" means a sample task on this site relies on it.</p>
+
+  {groups.map((group) => (
+    <div class="group">
+      <h3>{group}</h3>
+      <ul class="chips">
+        {tools.filter((t) => t.group === group).map((t) => (
+          <li>
+            {t.taskSlugs.length > 0 ? (
+              <details class="chip" data-status={t.status}>
+                <summary>
+                  <span class="name">{t.name}</span>
+                  <span class="status label">{statusText(t)}</span>
+                </summary>
+                <ul class="tasks">
+                  {t.taskSlugs.map((slug) => <li><a href={`/tasks/${slug}`}>{titleFor(slug)}</a></li>)}
+                </ul>
+              </details>
+            ) : (
+              <div class="chip" data-status={t.status}>
+                <span class="name">{t.name}</span>
+                <span class="status label">{statusText(t)}</span>
+              </div>
+            )}
+            {t.note && <p class="note label">{t.note}</p>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</section>
+
+<style>
+  .group { margin-bottom: 1.5rem; }
+  h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; align-items: flex-start; }
+  .chip { border: 1px solid var(--rule); padding: 0.35rem 0.75rem; }
+  .chip[data-status="used"] { border-color: var(--accent); }
+  summary, .chip:not(details) { display: flex; gap: 0.6rem; align-items: baseline; }
+  summary { cursor: pointer; }
+  .name { font-weight: 600; }
+  .note { margin: 0.25rem 0 0; }
+  .tasks { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+</style>
