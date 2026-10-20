@@ -51,6 +51,10 @@ h2 { font-size: clamp(1.75rem, 5vw, 2.25rem); }
 
 p { margin: 0 0 var(--space); }
 
+/* Space between the home page sections. */
+main > section { margin-top: 4rem; }
+main { padding-bottom: 4rem; }
+
 a { color: var(--accent); text-underline-offset: 0.15em; }
 
 /* Always-visible keyboard focus. */

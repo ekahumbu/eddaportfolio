@@ -1,0 +1,54 @@
+---
+// Email stays visible as text. The copy button only appears when JavaScript runs.
+import { profile } from "../data/site";
+
+// Show a link only when the value is real; keep TODO: visible as plain text.
+const isReal = (v: string) => !v.startsWith("TODO:");
+---
+
+<section id="contact" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">Contact</h2>
+  <ul>
+    <li>
+      <span class="label">Email</span>
+      {isReal(profile.email) ? <a href={`mailto:${profile.email}`} id="email">{profile.email}</a> : <span id="email">{profile.email}</span>}
+      <button type="button" id="copy-email" data-email={profile.email} hidden>Copy</button>
+      <span class="label" id="copy-status" aria-live="polite"></span>
+    </li>
+    <li>
+      <span class="label">LinkedIn</span>
+      {isReal(profile.linkedin) ? <a href={profile.linkedin}>{profile.linkedin}</a> : <span>{profile.linkedin}</span>}
+    </li>
+    <li>
+      <span class="label">GitHub</span>
+      {isReal(profile.github) ? <a href={profile.github}>{profile.github}</a> : <span>{profile.github}</span>}
+    </li>
+    <li><span class="label">Time zone</span> {profile.location}</li>
+  </ul>
+</section>
+
+<style>
+  ul { padding: 0; margin: 0; list-style: none; display: grid; gap: 0.5rem; }
+  li { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: baseline; }
+  .label { min-width: 5.5rem; }
+  button { font: inherit; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ink); background: transparent; border: 1px solid var(--rule); padding: 0.2rem 0.6rem; cursor: pointer; }
+  button[hidden] { display: none; }
+</style>
+
+<script>
+  const button = document.getElementById("copy-email") as HTMLButtonElement | null;
+  const email = button?.dataset.email ?? "";
+  // Only offer copying when there is a real address and the browser allows it.
+  if (button && navigator.clipboard && !email.startsWith("TODO:")) {
+    button.hidden = false;
+    button.addEventListener("click", async () => {
+      const status = document.getElementById("copy-status");
+      try {
+        await navigator.clipboard.writeText(email);
+        if (status) status.textContent = "Copied";
+      } catch {
+        if (status) status.textContent = "Copy failed, select the address instead";
+      }
+    });
+  }
+</script>

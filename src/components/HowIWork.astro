@@ -1,0 +1,29 @@
+---
+// Four short points. The time-zone line is fact from the brief; the other three
+// are commitments only Edda can make, so they stay TODO: until she writes them.
+import { profile } from "../data/site";
+
+const points = [
+  { title: "Async updates", text: "TODO: how and when you send progress updates." },
+  { title: "Written handoffs", text: "TODO: what a finished handoff includes." },
+  { title: "Time-zone overlap", text: `Based in ${profile.location}, working ${profile.hours}.` },
+  { title: "Turnaround promise", text: "TODO: your real turnaround commitment." },
+];
+---
+
+<section id="how-i-work" aria-labelledby="work-heading">
+  <h2 id="work-heading">How I work</h2>
+  <ul>
+    {points.map((p) => (
+      <li><h3>{p.title}</h3><p>{p.text}</p></li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  ul { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }
+  @media (min-width: 768px) { ul { grid-template-columns: 1fr 1fr; } }
+  li { border-top: 1px solid var(--rule); padding-top: 0.75rem; }
+  h3 { font-size: 1.35rem; margin-bottom: 0.25rem; }
+  p { margin: 0; }
+</style>

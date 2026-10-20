@@ -1,0 +1,12 @@
+---
+import Base from "../layouts/Base.astro";
+import BuildLog from "../components/BuildLog.astro";
+import { getLog } from "../lib/content";
+
+const entries = await getLog();
+---
+
+<Base title="Build log | Edda" description="Dated notes on what I built, learned, broke and fixed.">
+  <p class="label"><a href="/">&larr; Home</a></p>
+  <BuildLog entries={entries} heading="Build log" />
+</Base>
