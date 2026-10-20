@@ -21,7 +21,7 @@ export interface Tool {
 
 export const tools: Tool[] = [
   // Coordination
-  { name: "Notion", group: "Coordination", status: "TODO:" },
+  { name: "Notion", group: "Coordination", status: "daily" },
   { name: "Slack", group: "Coordination", status: "TODO:" },
   { name: "Google Workspace", group: "Coordination", status: "TODO:" },
   { name: "Microsoft 365", group: "Coordination", status: "TODO:" },
@@ -35,7 +35,7 @@ export const tools: Tool[] = [
   { name: "Zapier", group: "Operations", status: "TODO:" },
   { name: "Power Automate", group: "Operations", status: "TODO:" },
   { name: "SharePoint", group: "Operations", status: "TODO:" },
-  { name: "Canva", group: "Operations", status: "TODO:" },
+  { name: "Canva", group: "Operations", status: "daily" },
 
   // Analysis
   { name: "Excel", group: "Analysis", status: "TODO:" },
@@ -45,9 +45,9 @@ export const tools: Tool[] = [
   { name: "Google Sheets", group: "Analysis", status: "TODO:" },
 
   // AI
-  { name: "Claude", group: "AI", status: "TODO:" },
-  { name: "ChatGPT", group: "AI", status: "TODO:" },
-  { name: "Perplexity", group: "AI", status: "TODO:" },
+  { name: "Claude", group: "AI", status: "daily" },
+  { name: "ChatGPT", group: "AI", status: "daily" },
+  { name: "Perplexity", group: "AI", status: "daily", note: "Research" },
   { name: "NotebookLM", group: "AI", status: "TODO:" },
   { name: "Leonardo.ai", group: "AI", status: "TODO:" },
 ];
