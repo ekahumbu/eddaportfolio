@@ -12,7 +12,8 @@ const isReal = (v: string) => !v.startsWith("TODO:");
     <li>
       <span class="label">Email</span>
       {isReal(profile.email) ? <a href={`mailto:${profile.email}`} id="email">{profile.email}</a> : <span id="email">{profile.email}</span>}
-      <button type="button" id="copy-email" data-email={profile.email} hidden>Copy</button>
+      <!-- data-ready is set only when the email is real, so the script never has to check for placeholders. -->
+      <button type="button" id="copy-email" data-email={profile.email} data-ready={isReal(profile.email) ? "yes" : undefined} hidden>Copy</button>
       <span class="label" id="copy-status" aria-live="polite"></span>
     </li>
     <li>
@@ -39,7 +40,7 @@ const isReal = (v: string) => !v.startsWith("TODO:");
   const button = document.getElementById("copy-email") as HTMLButtonElement | null;
   const email = button?.dataset.email ?? "";
   // Only offer copying when there is a real address and the browser allows it.
-  if (button && navigator.clipboard && !email.startsWith("TODO:")) {
+  if (button && navigator.clipboard && button.dataset.ready === "yes") {
     button.hidden = false;
     button.addEventListener("click", async () => {
       const status = document.getElementById("copy-status");

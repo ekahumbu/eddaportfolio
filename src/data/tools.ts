@@ -22,40 +22,41 @@ export interface Tool {
 export const tools: Tool[] = [
   // Coordination
   { name: "Notion", group: "Coordination", status: "daily" },
-  { name: "Slack", group: "Coordination", status: "TODO:" },
-  { name: "Google Workspace", group: "Coordination", status: "TODO:" },
-  { name: "Microsoft 365", group: "Coordination", status: "TODO:" },
-  { name: "Microsoft Teams", group: "Coordination", status: "TODO:" },
-  { name: "Outlook", group: "Coordination", status: "TODO:" },
-  { name: "OneDrive", group: "Coordination", status: "TODO:" },
-  { name: "Word", group: "Coordination", status: "TODO:" },
-  { name: "PowerPoint", group: "Coordination", status: "TODO:" },
-  { name: "Calendly", group: "Coordination", status: "TODO:" },
-  { name: "Loom", group: "Coordination", status: "TODO:" },
+  { name: "Slack", group: "Coordination", status: "practising" },
+  { name: "Google Workspace", group: "Coordination", status: "practising" },
+  { name: "Microsoft 365", group: "Coordination", status: "daily" },
+  { name: "Microsoft Teams", group: "Coordination", status: "daily" },
+  { name: "Outlook", group: "Coordination", status: "daily" },
+  { name: "OneDrive", group: "Coordination", status: "daily" },
+  { name: "Word", group: "Coordination", status: "daily" },
+  { name: "PowerPoint", group: "Coordination", status: "daily" },
+  { name: "Calendly", group: "Coordination", status: "started" },
+  { name: "Loom", group: "Coordination", status: "started" },
 
   // Operations
-  { name: "Monday.com", group: "Operations", status: "TODO:" },
-  { name: "HubSpot", group: "Operations", status: "TODO:" },
-  { name: "Make", group: "Operations", status: "TODO:" },
-  { name: "Zapier", group: "Operations", status: "TODO:" },
-  { name: "Power Automate", group: "Operations", status: "TODO:" },
-  { name: "SharePoint", group: "Operations", status: "TODO:" },
+  { name: "Monday.com", group: "Operations", status: "started" },
+  { name: "HubSpot", group: "Operations", status: "started" },
+  { name: "Make", group: "Operations", status: "started" },
+  { name: "Zapier", group: "Operations", status: "started" },
+  { name: "n8n", group: "Operations", status: "practising", note: "Social posting and task-move alerts by email and SMS" },
+  { name: "Power Automate", group: "Operations", status: "practising", note: "Daily Excel file backup" },
+  { name: "SharePoint", group: "Operations", status: "daily" },
   { name: "Canva", group: "Operations", status: "daily" },
-  { name: "Google Forms", group: "Operations", status: "TODO:" },
+  { name: "Google Forms", group: "Operations", status: "practising" },
 
   // Analysis
   { name: "Excel", group: "Analysis", status: "TODO:" },
   { name: "SQL", group: "Analysis", status: "TODO:" },
-  { name: "Power BI", group: "Analysis", status: "TODO:" },
-  { name: "Python", group: "Analysis", status: "TODO:" },
-  { name: "Google Sheets", group: "Analysis", status: "TODO:" },
+  { name: "Power BI", group: "Analysis", status: "daily" },
+  { name: "Python", group: "Analysis", status: "practising", note: "Cleaning and splitting documents" },
+  { name: "Google Sheets", group: "Analysis", status: "practising" },
 
   // AI
   { name: "Claude", group: "AI", status: "daily" },
   { name: "ChatGPT", group: "AI", status: "daily" },
   { name: "Perplexity", group: "AI", status: "daily", note: "Research" },
-  { name: "NotebookLM", group: "AI", status: "TODO:" },
-  { name: "Leonardo.ai", group: "AI", status: "TODO:" },
+  { name: "NotebookLM", group: "AI", status: "practising", note: "Studying" },
+  { name: "Leonardo.ai", group: "AI", status: "practising", note: "Image generation" },
 ];
 
 export const toolNames = new Set(tools.map((t) => t.name));
