@@ -1,5 +1,9 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getTasks, getLog, getTools } from "../lib/content";
+
+// Loading the content runs the build checks (see src/lib/content.ts).
+await Promise.all([getTasks(), getLog(), getTools()]);
 ---
 
 <Base title="Edda" description="Sample tasks showing work that keeps moving, organised and checked.">
