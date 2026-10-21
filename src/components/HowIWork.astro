@@ -1,28 +1,37 @@
 ---
-// Four short points. The time-zone line is fact from the brief; the other three
-// are commitments only Edda can make, so they stay TODO: until she writes them.
-import { profile } from "../data/site";
-
+// Four steps, in the order they happen, so they're an ordered list.
 const points = [
-  { title: "Async updates", text: "TODO: how and when you send progress updates." },
-  { title: "Written handoffs", text: "TODO: what a finished handoff includes." },
-  { title: "Time-zone overlap", text: `Based in ${profile.location}, working ${profile.hours}.` },
-  { title: "Turnaround promise", text: "TODO: your real turnaround commitment." },
+  {
+    title: "Clarify the goal",
+    text: "I ask targeted questions to define the objective, deadline, and what \"done\" looks like. I'm highly async-friendly, so I document everything upfront to save us from unnecessary calls.",
+  },
+  {
+    title: "Structure the mess",
+    text: "I take your loose brief or zero-draft and break it into actionable steps. I set up simple tracking and flag missing info early so the project never stalls.",
+  },
+  {
+    title: "Execute and verify",
+    text: "I do the deep work, then run it through a strict personal QA checklist. I don't hand over anything I haven't double-checked, so it arrives polished and ready to use.",
+  },
+  {
+    title: "Deliver and refine",
+    text: "I present the final output with clear notes on any decisions you need to make. I track lessons learned in my Build Log, ensuring transparent, continuous improvement.",
+  },
 ];
 ---
 
 <section id="how-i-work" aria-labelledby="work-heading">
   <h2 id="work-heading">How I work</h2>
-  <ul>
+  <ol>
     {points.map((p) => (
       <li><h3>{p.title}</h3><p>{p.text}</p></li>
     ))}
-  </ul>
+  </ol>
 </section>
 
 <style>
-  ul { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }
-  @media (min-width: 768px) { ul { grid-template-columns: 1fr 1fr; } }
+  ol { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }
+  @media (min-width: 768px) { ol { grid-template-columns: 1fr 1fr; } }
   li { border-top: 1px solid var(--rule); padding-top: 0.75rem; }
   h3 { font-size: 1.35rem; margin-bottom: 0.25rem; }
   p { margin: 0; }

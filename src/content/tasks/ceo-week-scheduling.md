@@ -8,7 +8,7 @@ brief: "It is Sat 3. Nine requests have landed for CEO Dana Whitfield's week of 
 timeTaken: "2 h"
 tools: ["Excel"]
 aiTools: ["Claude"]
-aiNote: "I use Claude in Excel to speed up analysis and building. I direct the work and review everything it produces."
+aiNote: "Claude created this practice simulation. I used Claude in Excel to work faster, directing the work and reviewing everything it produced."
 outcome: "Logged 18 conflicts across nine requests, settled them in 14 documented decisions, and drafted one summary email to the CEO."
 deliverables:
   - label: "Scheduling workbook (Excel)"
@@ -28,7 +28,7 @@ date: 2026-10-15
 featured: false
 draft: false
 ---
-## The brief
+## The details
 
 Dana's standing rules: deep work, protected lunch, buffers after long meetings, a Thursday 4:45 PM hard stop, no COO 1:1 cancelled two weeks running, and vendors routed to Operations. External messages need her approval. She is flying 3:00–5:00 PM ET and wants one short summary.
 

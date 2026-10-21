@@ -35,7 +35,7 @@ date: 2026-10-17
 featured: false
 draft: false
 ---
-## The brief
+## The details
 
 Two stops in the first week of November, leaving from and returning to Charlotte: a spring-assortment meeting with the buyer in Bellevue on Wed 4 Nov, 10:00–11:30 AM PT, and a peak-readiness walk-through at the Reno warehouse on Thu 5 Nov. Home by 6:00 PM on Fri 6 Nov.
 

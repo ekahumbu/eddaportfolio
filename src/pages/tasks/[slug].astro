@@ -41,7 +41,7 @@ const dateText = d.date.toISOString().slice(0, 10);
     </dl>
 
     {d.cover && (
-      <a class="cover-link" href={d.cover} aria-label="Open the full-size image">
+      <a class="cover-link" href={d.cover}>
         <img class="cover" src={d.cover} alt={d.coverAlt} width={d.coverWidth} height={d.coverHeight} decoding="async" />
       </a>
     )}
@@ -56,7 +56,7 @@ const dateText = d.date.toISOString().slice(0, 10);
         <h2 id="look-heading">Quick look</h2>
         {d.previews.map((p) => (
           <figure>
-            <a href={p.src} aria-label={`Open the full-size image: ${p.caption}`}>
+            <a href={p.src}>
               <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" decoding="async" />
             </a>
             <figcaption class="label">{p.caption}</figcaption>

@@ -1,43 +1,23 @@
-# Astro Starter Kit: Minimal
+# Eddah Dena: portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A static Astro site of sample tasks (executive support, operations, analysis), each built on a fictional scenario with synthetic data.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command | Action |
+| :-- | :-- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Local site at `localhost:4321` (drafts visible) |
+| `npm run build` | Build to `dist/`, then fail if any `TODO:` is left in it |
+| `npm run preview` | Preview the built site |
+| `node scripts/make-og-image.mjs` | Redraw the link-preview image, `public/og.png` |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Where things live
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `src/content/tasks/`: one Markdown file per sample task. `draft: true` hides it from the live site.
+- `src/content/log/`: Build log entries.
+- `src/data/site.ts`: name, About text, contact details and tracks.
+- `src/data/tools.ts`: tool stack and statuses. "Used" is worked out from published tasks.
+- `src/data/ai.ts`: the "How I use AI" section.
+- `public/samples/`: deliverables and preview images. Strip personal metadata before adding files.
+- `astro.config.mjs`: set `site` to the live web address. Link previews need it, and the build fails until it is set.

@@ -28,7 +28,7 @@ date: 2026-10-16
 featured: false
 draft: false
 ---
-## The brief
+## The details
 
 Nothing reaches the executive or an external contact until it passes the checklist. It has to take five minutes or less. If it takes longer, the document is too complex and gets simplified before it goes.
 

@@ -1,10 +1,12 @@
 ---
 import { profile } from "../data/site";
+
+const paragraphs = profile.about.slice(0, -1);
+const last = profile.about.at(-1);
 ---
 
 <section id="about" aria-labelledby="about-heading">
   <h2 id="about-heading">About</h2>
-  <p>{profile.aboutSentences}</p>
-  <!-- The only mention of background on the site, framed as a transferable skill. -->
-  <p>{profile.background}</p>
+  {paragraphs.map((p) => <p>{p}</p>)}
+  <p>{last} Feel free to check out my <a href="/log">Build Log</a> to see what I'm learning along the way!</p>
 </section>

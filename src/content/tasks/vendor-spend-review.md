@@ -1,5 +1,5 @@
 ---
-title: "Review 25 software subscriptions and find $12,000 a year in savings"
+title: "Review 25 software subscriptions and find $18,601 a year in savings"
 role: "Operations"
 alsoShows: ["Analyst"]
 skills: ["Spend analysis", "Billing-error detection", "Renewal planning", "Reconciliation"]
@@ -40,9 +40,9 @@ date: 2026-10-17
 featured: false
 draft: false
 ---
-## The brief
+## The details
 
-Review the Q3 subscription export for all 25 tools and recommend at least $12,000 a year in savings without hurting peak season. Flag billing errors. Send Marcus (COO) one page by Tuesday 20 Oct, 12:00 PM ET.
+Send Marcus (COO) one page by Tuesday 20 Oct, 12:00 PM ET.
 
 The constraints: no changes to Shopify, Klaviyo, Gorgias, ShipStation or HubSpot before 15 Jan 2027. Seat cuts apply from the next billing date, and annual plans can only be cut at renewal. Billing disputes go to the Controller, who sends them. Vendors are not contacted directly.
 

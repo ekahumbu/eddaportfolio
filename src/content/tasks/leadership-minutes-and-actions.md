@@ -8,7 +8,7 @@ brief: "It is Mon 12 Oct 2026. The weekly leadership meeting ran 9:30–10:30 AM
 timeTaken: "About 2 h"
 tools: ["Excel", "Microsoft 365"]
 aiTools: ["Claude"]
-aiNote: "I use Claude in Excel to speed up analysis and building. I direct the work and review everything it produces."
+aiNote: "Claude created this practice simulation. I used Claude in Excel to work faster, directing the work and reviewing everything it produced."
 outcome: "A one-page set of minutes and a 13-item action tracker (5 updated, 8 new), with 4 actions flagged for Dana because their dates were missing or fell on a Sunday."
 deliverables:
   - label: "Action tracker (Excel)"
@@ -35,7 +35,7 @@ date: 2026-10-16
 featured: false
 draft: false
 ---
-## The brief
+## The details
 
 Minutes on one page, decisions and actions only. Every action has one owner and an exact day and date. HR offer details stay with HR. All times ET. Nothing goes out until Dana approves.
 

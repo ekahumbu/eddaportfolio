@@ -8,7 +8,7 @@ brief: "I need one page on Q3 for Monday's leadership meeting. Four things: are 
 timeTaken: "2 h"
 tools: ["Excel"]
 aiTools: ["Claude"]
-aiNote: "I use Claude in Excel to speed up analysis and building. I direct the work and review everything it produces."
+aiNote: "Claude created this practice simulation. I used Claude in Excel to work faster, directing the work and reviewing everything it produced."
 outcome: "Fixed 11 data problems and showed that, on the weeks reported, Q3 sales were $22,603 (1.4%) under budget."
 deliverables:
   - label: "Dashboard workbook (Excel)"
@@ -30,9 +30,9 @@ date: 2026-10-16
 featured: false
 draft: false
 ---
-## The brief
+## The details
 
-Four questions, answered in that order, on one page: are we on budget by channel, are DTC returns getting worse, is on-time shipping holding up before peak, and which channel is carrying us. Clean the export first and say what was fixed. Never overwrite the raw data, and flag gaps instead of filling them.
+Never overwrite the raw data, and flag gaps instead of filling them.
 
 Deadline: Monday 8:00 AM ET at the latest.
 

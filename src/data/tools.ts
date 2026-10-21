@@ -45,7 +45,7 @@ export const tools: Tool[] = [
   { name: "Google Forms", group: "Operations", status: "practising" },
 
   // Analysis
-  { name: "Excel", group: "Analysis", status: "TODO:" },
+  { name: "Excel", group: "Analysis", status: "daily" },
   { name: "SQL", group: "Analysis", status: "practising", note: "Querying large databases" },
   { name: "Power BI", group: "Analysis", status: "daily" },
   { name: "Python", group: "Analysis", status: "practising", note: "Cleaning and splitting documents" },

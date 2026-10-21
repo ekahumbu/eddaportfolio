@@ -1,11 +1,11 @@
-// The "How I use AI" section. Starting wording suggested for Edda to confirm or
-// rewrite. Tool names must match src/data/tools.ts.
+// The "How I use AI" section. Claude and Perplexity are in Edda's words; ChatGPT
+// is still starting wording to confirm. Tool names must match src/data/tools.ts.
 export const aiUses = [
-  { tool: "Claude", use: "First drafts of SOPs, emails and meeting summaries; checking spreadsheet logic." },
+  { tool: "Claude", use: "Working faster on everyday tasks, with me directing and checking the work. It also created the practice scenarios behind the sample tasks on this site." },
+  { tool: "Perplexity", use: "Research." },
   { tool: "ChatGPT", use: "Quick rewrites, tone changes, turning notes into action lists." },
-  { tool: "Perplexity", use: "Research with sources for trip plans and vendor comparisons." },
-  { tool: "NotebookLM", use: "Summarising long documents into a pre-read for a meeting." },
-  { tool: "Leonardo.ai", use: "Simple images for internal announcements and slides." },
+  { tool: "NotebookLM", use: "Studying." },
+  { tool: "Leonardo.ai", use: "Image generation." },
 ];
 
 // Edda's rule, in her words (default wording, to confirm).

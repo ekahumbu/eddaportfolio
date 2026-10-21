@@ -19,7 +19,7 @@ scan("dist");
 if (hits.length > 0) {
   console.error("\nBuild failed: 'TODO:' found in the finished site:");
   for (const h of hits) console.error("  " + h);
-  console.error("Fill in or remove these values (statuses in src/data/tools.ts, task and log files).\n");
+  console.error("Fill in or remove these values (statuses in src/data/tools.ts, task and log files, site in astro.config.mjs).\n");
   process.exit(1);
 }
 console.log("postbuild: no TODO: markers in dist/.");

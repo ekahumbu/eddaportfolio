@@ -30,11 +30,15 @@ export const profile = {
   name: "Eddah Dena",
   location: "Nairobi (EAT, UTC+3)",
   hours: "US and UK hours",
-  // The one place background is mentioned, phrased as a transferable skill.
-  // Default wording, to be confirmed by Edda.
-  background: "Over a decade of turning messy financial data into clear reports and decisions.",
-  aboutSentences: "TODO: 2-3 sentences about how you work and what you are building here.",
-  email: "TODO:",
+  // About section, one string per paragraph. The Build log link is added after
+  // the last paragraph in About.astro.
+  about: [
+    "Hi, I'm Eddah! I'm based in Nairobi and work flexibly across US and UK time zones.",
+    "For over a decade, I've helped teams make sense of messy financial data by turning it into clear reports and confident decisions.",
+    "Today, I bring that same clarity to my work as an Executive Assistant, Operations Coordinator, and Analyst. Give me a loose brief, and I'll hand back organised, thoroughly checked, and ready-to-use results.",
+    "To protect privacy, every sample here uses synthetic data.",
+  ],
+  email: "eddadena@nrold.com",
   linkedin: "https://www.linkedin.com/in/eddahdena",
   github: "https://github.com/ekahumbu",
 };

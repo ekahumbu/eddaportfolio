@@ -16,7 +16,7 @@ date: 2026-10-20
 featured: false
 draft: true
 ---
-## The brief
+## The details
 
 ## My approach
 
