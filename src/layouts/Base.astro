@@ -5,14 +5,16 @@ import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
 // Plus Jakarta Sans (headings and text), Newsreader (quotes), JetBrains Mono (labels).
+// "@" is written as %40 so the /p/ pages pass the no-"@" check in scripts/postbuild.mjs.
 const fontsUrl =
-  "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap";
+  "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght%400,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght%400,6..72,400;1,6..72,400&family=JetBrains+Mono:wght%40400;500&display=swap";
 
 interface Props {
   title: string;
   description: string;
+  bare?: boolean; // no header or footer, not indexed: the /p/ pages linked from Upwork
 }
-const { title, description } = Astro.props;
+const { title, description, bare = false } = Astro.props;
 
 // Link previews need full web addresses, built from `site` in astro.config.mjs.
 // Until it is set, a TODO: marker goes into the page and the production build fails.
@@ -28,6 +30,7 @@ const imageUrl = abs("/og.png");
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    {bare && <meta name="robots" content="noindex" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <link rel="canonical" href={pageUrl} />
@@ -63,10 +66,10 @@ const imageUrl = abs("/og.png");
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    <SiteHeader />
+    {!bare && <SiteHeader />}
     <main id="main" class="wrap">
       <slot />
     </main>
-    <SiteFooter />
+    {!bare && <SiteFooter />}
   </body>
 </html>

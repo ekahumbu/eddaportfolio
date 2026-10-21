@@ -1,0 +1,28 @@
+---
+// The Upwork-safe copy of each task, at /p/<slug>. Same content as /tasks/<slug>,
+// but no header, footer, email, LinkedIn or contact link, and not indexed.
+// scripts/postbuild.mjs fails the build if any of those slip into dist/p/.
+import Base from "../../layouts/Base.astro";
+import TaskArticle from "../../components/TaskArticle.astro";
+import { getTasks } from "../../lib/content";
+import { profile } from "../../data/site";
+
+export async function getStaticPaths() {
+  const tasks = await getTasks();
+  return tasks.map((task) => ({ params: { slug: task.id }, props: { task } }));
+}
+
+const { task } = Astro.props;
+const d = task.data;
+---
+
+<Base title={`${d.title} | ${profile.name}`} description={d.summary} bare>
+  {d.draft && <p class="draft-note label">Draft: only visible while developing.</p>}
+
+  <TaskArticle task={task} />
+</Base>
+
+<style>
+  .draft-note { border: 1px dashed var(--muted); padding: 0.5rem 0.75rem; }
+  :global(main) { padding-top: 1.5rem; }
+</style>
