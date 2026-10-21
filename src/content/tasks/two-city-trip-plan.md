@@ -5,10 +5,10 @@ alsoShows: []
 skills: ["Travel planning", "Budget trade-offs", "Time-zone planning", "Contingency planning"]
 summary: "Flights, hotels and rides checked against a traveller's rules, with a cost table, an itinerary and a fallback plan."
 brief: "Book whatever makes sense, under $1,600 all-in. I need to be back for my son's school event Friday 6 Nov at 6:00 PM in Charlotte. Send me the plan and anything I need to decide by Monday noon ET."
-timeTaken: "TODO:"
+timeTaken: "75 min (time box)"
 tools: ["Excel", "Microsoft 365"]
 aiTools: ["Claude"]
-aiNote: "I use Claude in Excel to speed up analysis and building. I direct the work and review everything it produces."
+aiNote: "Claude created this practice simulation and reviewed my output. The plan and recommendations are mine."
 outcome: "The recommended plan costs $1,466 against a $1,600 budget. The fallback plan is $19 over, at $1,619."
 deliverables:
   - label: "Trip workbook (Excel)"
@@ -33,7 +33,7 @@ previews:
 dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). Flights, hotels and prices are fictional. The work is mine."
 date: 2026-10-17
 featured: false
-draft: true
+draft: false
 ---
 ## The brief
 
@@ -61,4 +61,4 @@ The traveller's rules: no flight before 7:00 AM, no overnight flights, aisle sea
 
 ## What I'd do with more time
 
-TODO:
+Fill in the seven booking references and the sign-offs, which stay as placeholders because nothing in a practice scenario is booked. I would also export the decision log to PDF at a larger size, since the one-page version is small. The first review caught two real errors (a false reason for rejecting one option, and contradictory Friday times in the fallback plan), so I now run the pre-send checklist before the first review, not after it.

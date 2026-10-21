@@ -35,7 +35,7 @@ export const profile = {
   background: "Over a decade of turning messy financial data into clear reports and decisions.",
   aboutSentences: "TODO: 2-3 sentences about how you work and what you are building here.",
   email: "TODO:",
-  linkedin: "TODO:",
+  linkedin: "https://www.linkedin.com/in/eddahdena",
   github: "https://github.com/ekahumbu",
 };
 
