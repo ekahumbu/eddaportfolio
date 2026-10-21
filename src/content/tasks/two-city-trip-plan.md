@@ -3,8 +3,8 @@ title: "Plan a two-stop business trip within a $1,600 budget"
 role: "Executive support"
 alsoShows: []
 skills: ["Travel planning", "Budget trade-offs", "Time-zone planning", "Contingency planning"]
-summary: "Flights, hotels and rides checked against a traveller's rules, with a cost table, an itinerary and a fallback plan."
-brief: "Book whatever makes sense, under $1,600 all-in. I need to be back for my son's school event Friday 6 Nov at 6:00 PM in Charlotte. Send me the plan and anything I need to decide by Monday noon ET."
+summary: "Flights, hotels and rides checked against a traveler's rules, with a cost table, an itinerary and a fallback plan."
+brief: "Book whatever makes sense, under $1,600 all-in. I need to be back for my son's school event Friday, Nov 6 at 6:00 PM in Charlotte. Send me the plan and anything I need to decide by Monday noon ET."
 timeTaken: "75 min (time box)"
 tools: ["Excel", "Microsoft 365"]
 aiTools: ["Claude"]
@@ -16,7 +16,7 @@ deliverables:
   - label: "Decision log (PDF)"
     href: "/samples/two-city-trip-plan/trip-decision-log.pdf"
 cover: "/samples/two-city-trip-plan/previews/itinerary.webp"
-coverAlt: "Itinerary table for the recommended plan, from Monday 2 to Thursday 5 November, with local time, Eastern time, details and confirmation for each leg"
+coverAlt: "Itinerary table for the recommended plan, from Monday, November 2 to Thursday, November 5, with local time, Eastern time, details and confirmation for each leg"
 coverWidth: 1376
 coverHeight: 939
 previews:
@@ -30,24 +30,24 @@ previews:
     caption: "The summary for Dana: 150 words, two decisions"
     width: 1345
     height: 434
-dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). Flights, hotels and prices are fictional. The work is mine."
+dataSource: "Fictional scenario from a practice simulation (Kestrel Ridge Outdoor Co.), with synthetic data for every input and output. Flights, hotels and prices are fictional. The work is mine."
 date: 2026-10-17
 featured: false
 draft: false
 ---
 ## The details
 
-Two stops in the first week of November, leaving from and returning to Charlotte: a spring-assortment meeting with the buyer in Bellevue on Wed 4 Nov, 10:00–11:30 AM PT, and a peak-readiness walk-through at the Reno warehouse on Thu 5 Nov. Home by 6:00 PM on Fri 6 Nov.
+Two stops in the first week of November, leaving from and returning to Charlotte: a spring-assortment meeting with the buyer in Bellevue on Wed, Nov 4, 10:00–11:30 AM PT, and a peak-readiness walk-through at the Reno warehouse on Thu, Nov 5. Home by 6:00 PM on Fri, Nov 6.
 
-The traveller's rules: no flight before 7:00 AM, no overnight flights, aisle seat only, connections of 60 minutes or more, arrive the day before any external meeting, and a hotel within 15 minutes of the meeting when possible. Budget: $1,600 all-in. Decisions due by Monday noon ET.
+The traveler's rules: no flight before 7:00 AM, no overnight flights, aisle seat only, connections of 60 minutes or more, arrive the day before any external meeting, and a hotel within 15 minutes of the meeting when possible. Budget: $1,600 all-in. Decisions due by Monday noon ET.
 
 ## My approach
 
-1. Listed the traveller's rules and hard constraints before assessing any option.
+1. Listed the traveler's rules and hard constraints before assessing any option.
 2. Assessed every flight and hotel option against those rules and recorded the result in a decision log.
 3. Ran timing tests and checked for clashes with her existing commitments.
 4. Priced two plans on one cost table and checked the totals a second way. Plan B, recommended, comes to $1,466 and Plan A to $1,619.
-5. Wrote the itinerary, a contingency for the most fragile leg, two emails and a summary for the traveller (150 words, two decisions).
+5. Wrote the itinerary, a contingency for the most fragile leg, two emails and a summary for the traveler (150 words, two decisions).
 6. Ran a pre-send checklist on the workbook.
 
 ## What I delivered

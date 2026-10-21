@@ -5,7 +5,7 @@ alsoShows: ["Executive support"]
 skills: ["Process documentation", "Quality assurance", "Root-cause analysis"]
 summary: "A 12-check, 5-minute SOP built from the real mistakes in my first three practice samples, with a log to test it."
 brief: "After three practice samples, six major errors had reached the first review: a wrong meeting time, a summary twice its word limit, a false reason for a rejected option, an out-of-date action table, a placeholder left in, and a budget comparison over mismatched periods. Turn those into a checklist that runs in five minutes before anything is sent."
-timeTaken: "Not timed"
+timeTaken: "30 min"
 tools: ["Word"]
 aiTools: ["Claude"]
 aiNote: "Claude created the practice simulations and reviewed my output. The checks, the method and the results log are mine."
@@ -23,7 +23,7 @@ previews:
     caption: "How each check is done, and the real error behind each one"
     width: 900
     height: 1205
-dataSource: "Fictional scenarios from practice simulations (Kestrel Ridge Outdoor Co.). The errors are real mistakes from my own practice work."
+dataSource: "Fictional scenarios from practice simulations (Kestrel Ridge Outdoor Co.), with synthetic data for every input and output. The errors are real mistakes from my own practice work."
 date: 2026-10-16
 featured: false
 draft: false
@@ -48,7 +48,7 @@ The results log showed whether it worked. The first three samples had six major 
 - **The checklist:** 12 checks in six groups, with a five-minute time box.
 - **How I check:** the method and time for each group.
 - **Where each check came from:** the real error and the sample behind every check.
-- **Results log:** errors per sample, and whether the checklist was used. The PDF is the 16 October version. Later results are in the QA tabs of the trip plan and vendor review workbooks.
+- **Results log:** errors per sample, and whether the checklist was used. The PDF is the October 16 version. Later results are in the QA tabs of the trip plan and vendor review workbooks.
 
 ## What I'd do with more time
 

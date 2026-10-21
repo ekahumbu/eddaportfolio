@@ -4,7 +4,7 @@
 import sharp from "sharp";
 import { profile } from "../src/data/site.ts";
 
-// Same colours as the light theme in src/styles/global.css.
+// Same colors as the light theme in src/styles/global.css.
 const paper = "#f5f6f3";
 const ink = "#1c1f24";
 const muted = "#5d636c";
@@ -19,7 +19,7 @@ const svg = `
   <text x="130" y="140" font-family="Consolas, monospace" font-size="28" fill="${muted}">${escape(`${profile.name} · Nairobi · ${profile.hours}`)}</text>
   <text font-family="Georgia, serif" font-size="76" fill="${ink}">
     <tspan x="130" y="290">Work that keeps moving,</tspan>
-    <tspan x="130" y="380">organised and checked.</tspan>
+    <tspan x="130" y="380">organized and checked.</tspan>
   </text>
   <text x="130" y="520" font-family="Segoe UI, Arial, sans-serif" font-size="32" fill="${muted}">Sample tasks: executive support, operations, analysis</text>
 </svg>`;

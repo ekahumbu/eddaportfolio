@@ -7,7 +7,7 @@ import type { ToolView } from "../lib/content";
 import type { ToolGroup } from "../data/tools";
 
 interface Props {
-  tools: ToolView[]; // already sorted: used, daily, practising, started
+  tools: ToolView[]; // already sorted: used, daily, practicing, started
   tasks: CollectionEntry<"tasks">[];
 }
 const { tools, tasks } = Astro.props;
@@ -15,11 +15,11 @@ const { tools, tasks } = Astro.props;
 const groups: ToolGroup[] = ["Coordination", "Operations", "Analysis", "AI"];
 const titleFor = (slug: string) => tasks.find((t) => t.id === slug)?.data.title ?? slug;
 
-// Words shown on the chip, so status never depends on colour.
+// Words shown on the chip, so status never depends on color.
 const statusText = (t: ToolView) =>
   t.status === "used" ? `Used in ${t.taskSlugs.length} task${t.taskSlugs.length === 1 ? "" : "s"}` :
   t.status === "daily" ? "Used daily" :
-  t.status === "practising" ? "Practising" :
+  t.status === "practicing" ? "Practicing" :
   t.status === "started" ? "Started" : t.status;
 ---
 

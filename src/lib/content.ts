@@ -12,7 +12,7 @@ export interface ToolView extends Omit<Tool, "status"> {
 
 const MAX_FEATURED = 3;
 // Strongest first. "TODO:" sorts last.
-const statusOrder: ToolStatus[] = ["used", "daily", "practising", "started", "TODO:"];
+const statusOrder: ToolStatus[] = ["used", "daily", "practicing", "started", "TODO:"];
 
 // Drafts show while developing (npm run dev) but never in the production build.
 const showDrafts = import.meta.env.DEV;

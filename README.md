@@ -1,6 +1,6 @@
 # Eddah Dena: portfolio
 
-A static Astro site of sample tasks (executive support, operations, analysis), each built on a fictional scenario with synthetic data.
+A static Astro site of sample tasks (executive support, operations, analysis). Each one is a fictional scenario built on synthetic data.
 
 ## Commands
 
@@ -20,4 +20,8 @@ A static Astro site of sample tasks (executive support, operations, analysis), e
 - `src/data/tools.ts`: tool stack and statuses. "Used" is worked out from published tasks.
 - `src/data/ai.ts`: the "How I use AI" section.
 - `public/samples/`: deliverables and preview images. Strip personal metadata before adding files.
-- `astro.config.mjs`: set `site` to the live web address. Link previews need it, and the build fails until it is set.
+- `astro.config.mjs`: the site address for link previews. On Vercel it is read from the production domain automatically; for a local build run `SITE_URL=https://your-domain npm run build`.
+
+## Deploying on Vercel
+
+Import the GitHub repo in Vercel. It detects Astro and uses `vercel.json` (build `npm run build`, output `dist`). Add the custom domain under Project → Settings → Domains, then redeploy so link previews use it.

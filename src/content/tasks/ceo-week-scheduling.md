@@ -2,7 +2,7 @@
 title: "Rebuild a CEO's week after nine conflicting requests"
 role: "Executive support"
 alsoShows: []
-skills: ["Calendar management", "Prioritisation", "Time zones", "Stakeholder messaging"]
+skills: ["Calendar management", "Prioritization", "Time zones", "Stakeholder messaging"]
 summary: "Nine requests, 18 clashes and a hard stop: a conflict log, a rebuilt week and the messages to send."
 brief: "It is Sat 3. Nine requests have landed for CEO Dana Whitfield's week of Mon 5. The board chair wants to move the Q3 board meeting to Wed 7, which knocks on to a VP interview, the sales pipeline review and Thursday's deep work."
 timeTaken: "2 h"
@@ -23,14 +23,14 @@ previews:
     caption: "The one short summary email to Dana, 186 words"
     width: 1064
     height: 663
-dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
+dataSource: "Fictional scenario from a practice simulation (Kestrel Ridge Outdoor Co.), with synthetic data for every input and output. The work is mine."
 date: 2026-10-15
 featured: false
 draft: false
 ---
 ## The details
 
-Dana's standing rules: deep work, protected lunch, buffers after long meetings, a Thursday 4:45 PM hard stop, no COO 1:1 cancelled two weeks running, and vendors routed to Operations. External messages need her approval. She is flying 3:00–5:00 PM ET and wants one short summary.
+Dana's standing rules: deep work, protected lunch, buffers after long meetings, a Thursday 4:45 PM hard stop, no COO 1:1 canceled two weeks running, and vendors routed to Operations. External messages need her approval. She is flying 3:00–5:00 PM ET and wants one short summary.
 
 Deadlines: Kevin Cho (TrailMart, the number one account) locks his calendar at 8:00 PM ET today. Ellen Shaw needs the board answer by Monday 12:00 PM ET.
 

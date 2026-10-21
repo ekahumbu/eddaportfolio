@@ -25,7 +25,7 @@ previews:
     caption: "Close-up: budget by channel, with the TrailMart decimal-slip scenario shown separately"
     width: 1396
     height: 669
-dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
+dataSource: "Fictional scenario from a practice simulation (Kestrel Ridge Outdoor Co.), with synthetic data for every input and output. The work is mine."
 date: 2026-10-16
 featured: false
 draft: false

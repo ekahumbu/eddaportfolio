@@ -22,7 +22,7 @@ const { track } = Astro.props;
 const [tasks, log, tools] = await Promise.all([getTasks(), getLog(), getTools()]);
 
 const title = track ? `${profile.name} | ${track.name}` : `${profile.name} | Sample tasks`;
-const description = track ? track.heroLine : "Sample tasks showing work that keeps moving, organised and checked.";
+const description = track ? track.heroLine : "Sample tasks showing work that keeps moving, organized and checked.";
 ---
 
 <Base title={title} description={description}>

@@ -4,7 +4,7 @@ role: "Executive support"
 alsoShows: []
 skills: ["Minute-taking", "Action tracking", "Confidentiality", "Clear writing"]
 summary: "A garbled auto-transcript turned into one-page minutes, a dated action tracker and a draft email for approval."
-brief: "It is Mon 12 Oct 2026. The weekly leadership meeting ran 9:30–10:30 AM ET on Teams. My power went out at 9:40 AM, so I worked from the Teams auto-transcript, which had wrong speaker labels and misheard names."
+brief: "It is Mon, Oct 12, 2026. The weekly leadership meeting ran 9:30–10:30 AM ET on Teams. My power went out at 9:40 AM, so I worked from the Teams auto-transcript, which had wrong speaker labels and misheard names."
 timeTaken: "About 2 h"
 tools: ["Excel", "Microsoft 365"]
 aiTools: ["Claude"]
@@ -30,7 +30,7 @@ previews:
     caption: "Questions I could not settle myself, with a recommendation for each"
     width: 868
     height: 378
-dataSource: "Fictional scenario and data from a practice simulation (Kestrel Ridge Outdoor Co.). The work is mine."
+dataSource: "Fictional scenario from a practice simulation (Kestrel Ridge Outdoor Co.), with synthetic data for every input and output. The work is mine."
 date: 2026-10-16
 featured: false
 draft: false
@@ -39,7 +39,7 @@ draft: false
 
 Minutes on one page, decisions and actions only. Every action has one owner and an exact day and date. HR offer details stay with HR. All times ET. Nothing goes out until Dana approves.
 
-Deadline: minutes and action tracker to Dana by Monday 12 Oct, 2:00 PM ET (9:00 PM Nairobi).
+Deadline: minutes and action tracker to Dana by Monday, Oct 12, 2:00 PM ET (9:00 PM Nairobi).
 
 ## My approach
 
@@ -47,7 +47,7 @@ Deadline: minutes and action tracker to Dana by Monday 12 Oct, 2:00 PM ET (9:00 
 2. **Extract.** Pulled out the final decisions only, the actions (who, what, when) and the confidential items.
 3. **Reconcile.** Gave actions A-031 to A-035 a new status and added new actions A-036 to A-043.
 4. **Date.** Turned "Friday", "next week" and similar into a day and date, and flagged undated actions instead of guessing.
-5. **Communicate.** Wrote the one-page minutes, a draft email for Dana, the Monday 19 Oct agenda and three questions for Dana.
+5. **Communicate.** Wrote the one-page minutes, a draft email for Dana, the Monday, Oct 19 agenda and three questions for Dana.
 
 The hardest call: the temp-staffing decision changed late, from 25 to 20 after Tom's Q3 cash point, and three speaker labels in the transcript were wrong.
 
@@ -56,7 +56,7 @@ The hardest call: the temp-staffing decision changed late, from 25 to 20 after T
 - **Action tracker:** all actions A-031 to A-043 with owner, exact due date, status and flags for Dana.
 - **Minutes:** one page of decisions and actions.
 - **Follow-up email:** a draft for Dana, not to be sent until approved.
-- **Next agenda:** the draft agenda for Monday 19 Oct.
+- **Next agenda:** the draft agenda for Monday, Oct 19.
 - **Questions for Dana:** the items I could not settle myself.
 
 ## What I'd do with more time
