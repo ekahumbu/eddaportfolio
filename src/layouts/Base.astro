@@ -13,8 +13,9 @@ interface Props {
   title: string;
   description: string;
   bare?: boolean; // no header or footer, not indexed: the /p/ pages linked from Upwork
+  footerContact?: boolean; // false drops the email and LinkedIn links from the footer
 }
-const { title, description, bare = false } = Astro.props;
+const { title, description, bare = false, footerContact = true } = Astro.props;
 
 // Link previews need full web addresses, built from `site` in astro.config.mjs.
 // Until it is set, a TODO: marker goes into the page and the production build fails.
@@ -70,6 +71,6 @@ const imageUrl = abs("/og.png");
     <main id="main" class="wrap">
       <slot />
     </main>
-    {!bare && <SiteFooter />}
+    {!bare && <SiteFooter contactLinks={footerContact} />}
   </body>
 </html>

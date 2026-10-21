@@ -15,7 +15,7 @@ const { task } = Astro.props;
 const d = task.data;
 ---
 
-<Base title={`${d.title} | ${profile.name}`} description={d.summary}>
+<Base title={`${d.title} | ${profile.name}`} description={d.summary} footerContact={false}>
   <p class="back label"><a href="/#tasks">&larr; All sample tasks</a></p>
 
   {d.draft && <p class="draft-note label">Draft: only visible while developing.</p>}

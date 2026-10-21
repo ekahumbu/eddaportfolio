@@ -1,5 +1,10 @@
 ---
 import { profile } from "../data/site";
+
+interface Props {
+  contactLinks?: boolean; // false on task pages: no email or LinkedIn
+}
+const { contactLinks = true } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
@@ -7,8 +12,8 @@ const year = new Date().getFullYear();
   <div class="wrap row label">
     <p>© {year} {profile.name} · {profile.location}</p>
     <ul>
-      <li><a href={`mailto:${profile.email}`}>Email</a></li>
-      <li><a href={profile.linkedin}>LinkedIn</a></li>
+      {contactLinks && <li><a href={`mailto:${profile.email}`}>Email</a></li>}
+      {contactLinks && <li><a href={profile.linkedin}>LinkedIn</a></li>}
       <li><a href="#main">Back to top <span aria-hidden="true">↑</span></a></li>
     </ul>
   </div>
