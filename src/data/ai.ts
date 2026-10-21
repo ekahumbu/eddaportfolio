@@ -1,13 +1,12 @@
-// The "How I use AI" section. Claude and Perplexity are in Edda's words; ChatGPT
-// is still starting wording to confirm. Tool names must match src/data/tools.ts.
+// The "How I use AI" section, in Eddah's words. Tool names must match src/data/tools.ts.
 export const aiUses = [
   { tool: "Claude", use: "Working faster on everyday tasks, with me directing and checking the work. It also created the practice scenarios behind the sample tasks on this site." },
   { tool: "Perplexity", use: "Research." },
-  { tool: "ChatGPT", use: "Quick rewrites, tone changes, turning notes into action lists." },
+  { tool: "ChatGPT", use: "Quick rewrites, tone changes, turning notes into action lists, brainstorming and image generation." },
   { tool: "NotebookLM", use: "Studying." },
   { tool: "Leonardo.ai", use: "Image generation." },
 ];
 
-// Edda's rule, in her words (default wording, to confirm).
+// Eddah's rule for working with AI.
 export const aiRule =
-  "AI gives me a first draft. I check every number, date and name before anything goes out.";
+  "I treat AI as an efficient apprentice. It makes first drafts from my instructions, speeds up routine work, and helps me brainstorm and work through complex tasks. I review every draft thoroughly and oversee every output to protect integrity, accuracy, and privacy.";
