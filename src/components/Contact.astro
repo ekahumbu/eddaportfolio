@@ -13,7 +13,11 @@ const isReal = (v: string) => !v.startsWith("TODO:");
 ---
 
 <section id="contact" aria-labelledby="contact-heading">
-  <SectionHead id="contact-heading" num={num} label="Contact" title="Get in touch" note={`Based in ${profile.location}, working ${profile.hours}.`} />
+  <SectionHead id="contact-heading" num={num} label="Contact" title="Get in touch" />
+  <p class="invite">{profile.contactInvite}</p>
+  {isReal(profile.email) && (
+    <p class="cta"><a class="button primary" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">→</span></a></p>
+  )}
   <ul>
     <li>
       <span class="label">Email</span>
@@ -30,15 +34,17 @@ const isReal = (v: string) => !v.startsWith("TODO:");
       <span class="label">GitHub</span>
       {isReal(profile.github) ? <a href={profile.github}>{profile.github}</a> : <span>{profile.github}</span>}
     </li>
-    <li><span class="label">Time zone</span> {profile.location}</li>
+    <li><span class="label">Time zone</span> {profile.location}, working {profile.hours}</li>
   </ul>
 </section>
 
 <style>
+  .invite { font-family: var(--font-story); font-size: clamp(1.35rem, 3.2vw, 1.75rem); line-height: 1.35; max-width: var(--text); }
+  .cta { margin: 1.5rem 0 2.5rem; }
   ul { padding: 0; margin: 0; list-style: none; display: grid; gap: 0.5rem; }
   li { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: baseline; }
   .label { min-width: 5.5rem; }
-  #email { font-size: clamp(1.4rem, 4.5vw, 2.25rem); font-weight: 600; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+  #email { font-weight: 600; overflow-wrap: anywhere; }
   button { font: inherit; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ink); background: transparent; border: 1px solid var(--rule); padding: 0.2rem 0.6rem; cursor: pointer; }
   button[hidden] { display: none; }
 </style>

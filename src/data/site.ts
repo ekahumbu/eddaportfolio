@@ -47,6 +47,8 @@ export const profile = {
     height: 800,
     alt: "Eddah Dena, wearing glasses and a denim shirt, at a conference.",
   },
+  // Contact: the invitation at the top of "Get in touch".
+  contactInvite: "Have a messy brief, a chaotic calendar, or data that needs making sense of? Let's talk. I'm currently open to new opportunities and respond to emails within 24 hours.",
   email: "eddadena@nrold.com",
   linkedin: "https://www.linkedin.com/in/eddahdena",
   github: "https://github.com/ekahumbu",

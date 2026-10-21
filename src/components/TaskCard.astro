@@ -16,17 +16,18 @@ const trackSlug = tracks.find((t) => t.name === d.role)?.slug;
 
 <li class="card" data-tracks={shows.join("|")}>
   <p class="tag" data-track={trackSlug}>
-    {d.role}
+    {shows.join(" · ")}
     {d.draft && <span class="draft"> · Draft</span>}
   </p>
   <h3><a href={`/tasks/${task.id}`}>{d.title}</a></h3>
   <p class="summary">{d.summary}</p>
   <p class="outcome">{d.outcome}</p>
-  <dl class="facts label">
+  <!-- Time, tools and AI as badges, so a reader can take them in at a glance. -->
+  <dl class="facts">
     <div><dt>Time</dt><dd>{d.timeTaken}</dd></div>
     <div><dt>Tools</dt><dd>{d.tools.join(", ")}</dd></div>
+    {d.aiTools.length > 0 && <div class="ai"><dt>AI</dt><dd>{d.aiTools.join(", ")}</dd></div>}
   </dl>
-  {d.aiTools.length > 0 && <p class="ai label">AI used: {d.aiTools.join(", ")}</p>}
   <ul class="skills label">
     {d.skills.map((s) => <li>{s}</li>)}
   </ul>
@@ -73,11 +74,20 @@ const trackSlug = tracks.find((t) => t.name === d.role)?.slug;
   .tag[data-track="operations"]::before { border-radius: 50%; }               /* circle */
   .tag[data-track="analyst"]::before { transform: rotate(45deg); }            /* diamond */
 
-  .facts { margin: 0.25rem 0 0; display: grid; gap: 0.15rem; }
-  .facts div { display: flex; gap: 0.5rem; }
-  .facts dt { min-width: 3.5rem; }
-  .facts dd { margin: 0; color: var(--ink); }
-  .ai { opacity: 0.85; }
+  .facts { margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .facts div {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    background: var(--paper);
+  }
+  .facts dt { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .facts dd { margin: 0; font-size: 0.875rem; font-weight: 600; }
+  .facts .ai { border-color: var(--accent); }
+  .facts .ai dd { color: var(--accent); }
   .skills { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0; margin: 0.25rem 0 0; list-style: none; }
   .skills li { border: 1px solid var(--rule); padding: 0 0.5rem; }
 </style>

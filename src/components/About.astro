@@ -31,7 +31,7 @@ const last = rest.at(-1);
         <div>
           <h3>{t.title}</h3>
           <p class="question">{t.question}</p>
-          <p class="turn">{t.open ? <span class="label">Still being written. </span> : null}{t.turn}</p>
+          <p class="turn">{t.turn}</p>
           {t.link && <p class="link label"><a href={t.link.href}>{t.link.label} <span aria-hidden="true">→</span></a></p>}
         </div>
       </li>

@@ -7,7 +7,7 @@ export interface Turn {
   question: string;
   turn: string;
   link?: { label: string; href: string };
-  open?: boolean; // still being written
+  open?: boolean; // in progress now; highlighted in the accent color
 }
 
 export const journey: Turn[] = [
@@ -38,10 +38,10 @@ export const journey: Turn[] = [
     link: { label: "The pre-send checklist", href: "/tasks/pre-send-qa-checklist" },
   },
   {
-    period: "Next",
-    title: "Still being written",
+    period: "Now",
+    title: "Next up",
     question: "What do remote teams need from me next?",
-    turn: "More operations and analysis samples, built in the tools those teams use: HubSpot, Monday.com and Make.",
+    turn: "Building out advanced operations and analysis samples using the tools modern remote teams rely on: HubSpot, Monday.com, and Make.",
     open: true,
   },
 ];
