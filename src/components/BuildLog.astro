@@ -1,13 +1,16 @@
 ---
 // Build log as dated notebook lines. Used on the home page (latest 3) and on /log (all).
 import { render, type CollectionEntry } from "astro:content";
+import SectionHead from "./SectionHead.astro";
 
 interface Props {
   entries: CollectionEntry<"log">[]; // newest first
   limit?: number;
   heading?: string;
+  num?: string;
+  level?: 1 | 2; // 1 on /log, where this is the whole page
 }
-const { entries, limit, heading = "Build log" } = Astro.props;
+const { entries, limit, heading = "Build log", num, level = 2 } = Astro.props;
 const shown = limit ? entries.slice(0, limit) : entries;
 
 // Render each entry's Markdown body.
@@ -17,7 +20,7 @@ const rendered = await Promise.all(
 ---
 
 <section id="log" aria-labelledby="log-heading">
-  <h2 id="log-heading">{heading}</h2>
+  <SectionHead id="log-heading" num={num} level={level} label="Log" title={heading} note="Dated notes on what I built, learned, broke and fixed." />
   {rendered.length === 0 ? (
     <p>The first entries are on the way.</p>
   ) : (
@@ -40,10 +43,10 @@ const rendered = await Promise.all(
 
 <style>
   ol { padding: 0; margin: 0 0 1rem; list-style: none; }
-  li { padding: 0.9rem 0 0.9rem 1rem; border-left: 2px solid var(--rule); border-bottom: 1px dashed var(--rule); }
+  li { padding: 0.9rem 0 0.9rem 1rem; border-left: 2px solid var(--accent); border-bottom: 1px dashed var(--rule); }
   .meta { display: flex; gap: 0.75rem; margin: 0 0 0.25rem; }
   /* The kind label is outlined text, not a color. */
   .kind { border: 1px solid var(--muted); padding: 0 0.4rem; color: var(--ink); }
-  h3 { font-size: 1.35rem; margin-bottom: 0.25rem; }
+  h3 { font-size: 1.15rem; margin-bottom: 0.35rem; }
   .text :global(p) { margin-bottom: 0.5rem; }
 </style>

@@ -1,5 +1,5 @@
 ---
-// First screen: name, one-line promise, availability, the live "Now" line, two buttons.
+// First screen: who I am, the promise, the photo, the live "Now" line and two buttons.
 import type { CollectionEntry } from "astro:content";
 import { profile } from "../data/site";
 
@@ -7,32 +7,89 @@ interface Props {
   latest?: CollectionEntry<"log">; // newest Build log entry
   headline?: string; // track pages pass their own line
 }
-const { latest, headline = "Work that keeps moving, organized and checked." } = Astro.props;
+const { latest, headline } = Astro.props;
+const lines = headline ? [headline] : profile.headline;
+const year = new Date().getFullYear();
 ---
 
-<header class="hero">
-  <p class="label">{profile.name} · {profile.location} · {profile.hours}</p>
-  <h1>{headline}</h1>
-  <p class="lead">Sample tasks that show I can take a messy brief and hand back clean, usable work.</p>
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="top eyebrow">
+    <span>Portfolio / {year} · {profile.hours}</span>
+    <span class="social">
+      <a href={profile.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a>
+      <a href={profile.github}>GitHub <span aria-hidden="true">↗</span></a>
+    </span>
+  </div>
 
-  {latest && (
-    <p class="now">
-      <span class="label">Now · <time datetime={latest.data.date.toISOString().slice(0, 10)}>{latest.data.date.toISOString().slice(0, 10)}</time></span>
-      <a href="/log">{latest.data.title}</a>
-    </p>
-  )}
+  <div class="grid">
+    <div class="text">
+      <h1 id="hero-heading">{lines.map((l) => <span class="line">{l}</span>)}</h1>
+      <p class="lead">{profile.tagline}</p>
 
-  <p class="buttons">
-    <a class="button primary" href="#tasks">See sample tasks</a>
-    <a class="button" href="#contact">Contact</a>
-  </p>
-</header>
+      <p class="buttons">
+        <a class="button primary" href="#tasks"><span aria-hidden="true">↓</span> See sample tasks</a>
+        <a class="button" href="#about">How I got here</a>
+      </p>
+
+      {latest && (
+        <p class="now">
+          <span class="eyebrow">Now · <time datetime={latest.data.date.toISOString().slice(0, 10)}>{latest.data.date.toISOString().slice(0, 10)}</time></span>
+          <a href="/log">{latest.data.title}</a>
+        </p>
+      )}
+    </div>
+
+    <figure class="portrait">
+      <img
+        src={profile.portrait.src}
+        width={profile.portrait.width}
+        height={profile.portrait.height}
+        alt={profile.portrait.alt}
+        fetchpriority="high"
+        decoding="async"
+      />
+      <figcaption class="label">{profile.name} · {profile.location}</figcaption>
+    </figure>
+  </div>
+</section>
 
 <style>
-  .hero { padding-top: 3rem; }
-  .lead { font-size: 1.25rem; max-width: 36rem; }
-  .now { display: flex; flex-direction: column; gap: 0.15rem; border-left: 3px solid var(--accent); padding-left: 0.75rem; margin: 1.5rem 0; }
-  .buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-  .button { display: inline-block; padding: 0.6rem 1.1rem; border: 1px solid var(--ink); color: var(--ink); text-decoration: none; font-weight: 600; }
-  .button.primary { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .hero { padding-top: 2.5rem; }
+  .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1.5rem; margin-bottom: 2.5rem; }
+  .social { display: flex; gap: 1.25rem; }
+  .social a { color: var(--muted); text-decoration: none; }
+  .social a:hover { color: var(--accent); }
+
+  .grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+  .portrait { order: -1; margin: 0; max-width: 15rem; }
+  @media (min-width: 860px) {
+    .grid { grid-template-columns: 1fr 19rem; gap: 4rem; }
+    .portrait { order: 0; max-width: none; }
+  }
+
+  h1 { margin-bottom: 1.5rem; }
+  .line { display: block; }
+  .line:last-child { color: var(--accent); }
+  .lead { font-size: 1.2rem; max-width: 34rem; color: var(--muted); }
+  .buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0; }
+
+  .now { display: flex; flex-direction: column; gap: 0.2rem; border-left: 2px solid var(--accent); padding-left: 0.9rem; margin: 0; }
+  .now .eyebrow { margin: 0; }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    border: 1px solid var(--rule);
+    filter: saturate(0.92) contrast(1.02);
+  }
+  figcaption { margin-top: 0.6rem; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .line { animation: line-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .line:nth-child(2) { animation-delay: 0.08s; }
+    .line:nth-child(3) { animation-delay: 0.16s; }
+    @keyframes line-in { from { opacity: 0; transform: translateY(0.4em); } to { opacity: 1; transform: none; } }
+  }
 </style>

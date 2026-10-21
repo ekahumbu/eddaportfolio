@@ -1,12 +1,62 @@
 ---
+// About: the intro in my words, then "How I got here" as a numbered timeline.
+// Text lives in src/data/site.ts (intro) and src/data/journey.ts (timeline).
+import SectionHead from "./SectionHead.astro";
 import { profile } from "../data/site";
+import { journey } from "../data/journey";
 
-const paragraphs = profile.about.slice(0, -1);
-const last = profile.about.at(-1);
+interface Props {
+  num?: string;
+}
+const { num } = Astro.props;
+
+const [first, ...rest] = profile.about;
+const paragraphs = rest.slice(0, -1);
+const last = rest.at(-1);
 ---
 
 <section id="about" aria-labelledby="about-heading">
-  <h2 id="about-heading">About</h2>
-  {paragraphs.map((p) => <p>{p}</p>)}
-  <p>{last} Feel free to check out my <a href="/log">Build Log</a> to see what I'm learning along the way!</p>
+  <SectionHead id="about-heading" num={num} label="About" title="How I got here" />
+
+  <div class="intro">
+    <p class="story">{first}</p>
+    {paragraphs.map((p) => <p>{p}</p>)}
+    <p>{last} Feel free to check out my <a href="/log">Build Log</a> to see what I'm learning along the way!</p>
+  </div>
+
+  <ol class="journey">
+    {journey.map((t, i) => (
+      <li class:list={{ open: t.open }}>
+        <p class="meta eyebrow"><span class="idx">{String(i + 1).padStart(2, "0")}</span>{t.period}</p>
+        <div>
+          <h3>{t.title}</h3>
+          <p class="question">{t.question}</p>
+          <p class="turn">{t.open ? <span class="label">Still being written. </span> : null}{t.turn}</p>
+          {t.link && <p class="link label"><a href={t.link.href}>{t.link.label} <span aria-hidden="true">→</span></a></p>}
+        </div>
+      </li>
+    ))}
+  </ol>
 </section>
+
+<style>
+  .intro { max-width: var(--text); margin-bottom: 3rem; }
+  .story { font-family: var(--font-story); font-size: clamp(1.5rem, 3.5vw, 1.9rem); line-height: 1.3; }
+
+  .journey { list-style: none; padding: 0; margin: 0; }
+  .journey li {
+    display: grid;
+    gap: 0.25rem 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 760px) { .journey li { grid-template-columns: 11rem 1fr; } }
+  .meta { margin: 0.25rem 0 0; }
+  .idx { color: var(--accent); margin-right: 0.75rem; }
+  h3 { margin-bottom: 0.35rem; }
+  .question { font-family: var(--font-story); font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .turn { max-width: var(--text); margin: 0; }
+  .link { margin: 0.6rem 0 0; }
+  .link a { text-decoration: none; }
+  .open .meta { color: var(--accent); }
+</style>

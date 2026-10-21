@@ -38,6 +38,15 @@ export const profile = {
     "Today, I bring that same clarity to my work as an Executive Assistant, Operations Coordinator, and Analyst. Give me a loose brief, and I'll hand back organized, thoroughly checked, and ready-to-use results.",
     "To protect privacy, every sample here is a fictional scenario built on synthetic data.",
   ],
+  // Hero: the headline (one array item per line) and the line under it.
+  headline: ["Give me a loose brief.", "I'll hand back", "organized, checked work."],
+  tagline: "Executive Assistant, Operations Coordinator and Analyst in Nairobi, with over a decade of turning messy financial data into clear reports.",
+  portrait: {
+    src: "/media/eddah-portrait.webp",
+    width: 640,
+    height: 800,
+    alt: "Eddah Dena, wearing glasses and a denim shirt, at a conference.",
+  },
   email: "eddadena@nrold.com",
   linkedin: "https://www.linkedin.com/in/eddahdena",
   github: "https://github.com/ekahumbu",

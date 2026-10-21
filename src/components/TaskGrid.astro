@@ -5,12 +5,14 @@
 import type { CollectionEntry } from "astro:content";
 import { tracks } from "../data/site";
 import TaskCard from "./TaskCard.astro";
+import SectionHead from "./SectionHead.astro";
 
 interface Props {
   tasks: CollectionEntry<"tasks">[];
   firstTrack?: string; // track name to list first (used by /for/[track] pages)
+  num?: string;
 }
-const { tasks, firstTrack } = Astro.props;
+const { tasks, firstTrack, num } = Astro.props;
 
 // Order: the chosen track first, then featured tasks, then newest.
 const rank = (t: CollectionEntry<"tasks">) =>
@@ -25,8 +27,7 @@ const count = (name: string) => tasks.filter((t) => [t.data.role, ...t.data.also
 ---
 
 <section id="tasks" aria-labelledby="tasks-heading">
-  <h2 id="tasks-heading">Sample tasks</h2>
-  <p class="label">Every task is a work sample: a fictional scenario with synthetic data, not client work.</p>
+  <SectionHead id="tasks-heading" num={num} label="Work" title="Sample tasks" note="Every task is a work sample: a fictional scenario with synthetic data, not client work." />
 
   {sorted.length === 0 ? (
     <p>New sample tasks are on the way.</p>

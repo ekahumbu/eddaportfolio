@@ -9,5 +9,5 @@ const entries = await getLog();
 
 <Base title={`Build log | ${profile.name}`} description="Dated notes on what I built, learned, broke and fixed.">
   <p class="label"><a href="/">&larr; Home</a></p>
-  <BuildLog entries={entries} heading="Build log" />
+  <BuildLog entries={entries} heading="Build log" level={1} />
 </Base>

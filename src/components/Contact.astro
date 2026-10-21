@@ -1,13 +1,19 @@
 ---
 // Email stays visible as text. The copy button only appears when JavaScript runs.
 import { profile } from "../data/site";
+import SectionHead from "./SectionHead.astro";
+
+interface Props {
+  num?: string;
+}
+const { num } = Astro.props;
 
 // Show a link only when the value is real; keep TODO: visible as plain text.
 const isReal = (v: string) => !v.startsWith("TODO:");
 ---
 
 <section id="contact" aria-labelledby="contact-heading">
-  <h2 id="contact-heading">Contact</h2>
+  <SectionHead id="contact-heading" num={num} label="Contact" title="Get in touch" note={`Based in ${profile.location}, working ${profile.hours}.`} />
   <ul>
     <li>
       <span class="label">Email</span>
@@ -32,6 +38,7 @@ const isReal = (v: string) => !v.startsWith("TODO:");
   ul { padding: 0; margin: 0; list-style: none; display: grid; gap: 0.5rem; }
   li { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: baseline; }
   .label { min-width: 5.5rem; }
+  #email { font-size: clamp(1.4rem, 4.5vw, 2.25rem); font-weight: 600; letter-spacing: -0.02em; overflow-wrap: anywhere; }
   button { font: inherit; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ink); background: transparent; border: 1px solid var(--rule); padding: 0.2rem 0.6rem; cursor: pointer; }
   button[hidden] { display: none; }
 </style>

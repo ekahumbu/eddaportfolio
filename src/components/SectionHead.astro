@@ -1,0 +1,26 @@
+---
+// The heading block every section starts with: a numbered label, the title and
+// an optional one-line note, e.g. "01 About" / "How I got here".
+interface Props {
+  id: string; // heading id, for aria-labelledby on the section
+  label: string;
+  title: string;
+  num?: string; // "01", "02"... on the home page; left out elsewhere
+  note?: string;
+  level?: 1 | 2; // 1 when the section is the whole page (e.g. /log)
+}
+const { id, label, title, num, note, level = 2 } = Astro.props;
+const Heading = level === 1 ? "h1" : "h2";
+---
+
+<div class="section-head">
+  <p class="eyebrow">{num && <span class="num">{num}</span>}{label}</p>
+  <Heading id={id}>{title}</Heading>
+  {note && <p class="note">{note}</p>}
+</div>
+
+<style>
+  .section-head { margin-bottom: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+  .num { color: var(--accent); margin-right: 0.9rem; }
+  .note { color: var(--muted); max-width: var(--text); margin: 0; }
+</style>

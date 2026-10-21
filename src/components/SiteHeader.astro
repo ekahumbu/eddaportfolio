@@ -1,0 +1,102 @@
+---
+// Sticky navigation. Wide screens show the links in a row; narrow screens get a
+// "Menu" button built on <details>, so it opens without JavaScript.
+import { profile } from "../data/site";
+
+// Absolute links (/#about), so they work from task pages and /log too.
+const links = [
+  { label: "About", href: "/#about" },
+  { label: "Sample tasks", href: "/#tasks" },
+  { label: "How I work", href: "/#how-i-work" },
+  { label: "Tools", href: "/#tools" },
+  { label: "Build log", href: "/log" },
+];
+const initials = profile.name.split(" ").map((w) => w[0]).join("");
+---
+
+<header class="site-header">
+  <nav class="wrap bar" aria-label="Main">
+    <a class="brand" href="/" aria-label={`${profile.name}, home`}>
+      <span class="initials" aria-hidden="true">{initials}</span>
+      <span class="name">{profile.name}</span>
+    </a>
+
+    <ul class="links">
+      {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      <li><a class="cta" href="/#contact">Get in touch <span aria-hidden="true">→</span></a></li>
+    </ul>
+
+    <details class="menu">
+      <summary>Menu</summary>
+      <ul>
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        <li><a href="/#contact">Get in touch</a></li>
+      </ul>
+    </details>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .brand { display: flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; font-weight: 600; }
+  .initials {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  a { text-decoration: none; }
+  .links { display: none; align-items: center; gap: 1.5rem; }
+  .links a, .menu a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .links a:hover, .menu a:hover { color: var(--ink); }
+  .links .cta { color: var(--accent); }
+
+  .menu { position: relative; }
+  .menu summary {
+    list-style: none;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    padding: 0.4rem 0.75rem;
+  }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu[open] summary { border-color: var(--ink); }
+  .menu ul {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    min-width: 12rem;
+    background: var(--raised);
+    border: 1px solid var(--rule);
+    padding: 0.5rem 0;
+  }
+  .menu li a { display: block; padding: 0.6rem 1rem; }
+
+  @media (min-width: 860px) {
+    .links { display: flex; }
+    .menu { display: none; }
+  }
+</style>

@@ -1,6 +1,12 @@
 ---
 // The shared page frame. Every page wraps its content in <Base> ... </Base>.
 import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
+// Plus Jakarta Sans (headings and text), Newsreader (quotes), JetBrains Mono (labels).
+const fontsUrl =
+  "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap";
 
 interface Props {
   title: string;
@@ -35,8 +41,11 @@ const imageUrl = abs("/og.png");
     <meta property="og:image" content={imageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Eddah Dena: work that keeps moving, organized and checked." />
+    <meta property="og:image:alt" content="Eddah Dena: give me a loose brief, I'll hand back organized, checked work." />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#f7f2e3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)" />
 
     <!-- Only the weights the site uses; display=swap shows text straight away. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,21 +53,20 @@ const imageUrl = abs("/og.png");
     <!-- media="print" + onload makes the font CSS load without blocking the first paint. -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono&family=Schibsted+Grotesk:wght@400;600&display=swap"
+      href={fontsUrl}
       media="print"
       onload="this.media='all'"
     />
     <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono&family=Schibsted+Grotesk:wght@400;600&display=swap"
-      />
+      <link rel="stylesheet" href={fontsUrl} />
     </noscript>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader />
     <main id="main" class="wrap">
       <slot />
     </main>
+    <SiteFooter />
   </body>
 </html>

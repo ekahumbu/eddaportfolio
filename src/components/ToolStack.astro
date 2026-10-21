@@ -5,12 +5,14 @@
 import type { CollectionEntry } from "astro:content";
 import type { ToolView } from "../lib/content";
 import type { ToolGroup } from "../data/tools";
+import SectionHead from "./SectionHead.astro";
 
 interface Props {
   tools: ToolView[]; // already sorted: used, daily, practicing, started
   tasks: CollectionEntry<"tasks">[];
+  num?: string;
 }
-const { tools, tasks } = Astro.props;
+const { tools, tasks, num } = Astro.props;
 
 const groups: ToolGroup[] = ["Coordination", "Operations", "Analysis", "AI"];
 const titleFor = (slug: string) => tasks.find((t) => t.id === slug)?.data.title ?? slug;
@@ -24,8 +26,7 @@ const statusText = (t: ToolView) =>
 ---
 
 <section id="tools" aria-labelledby="tools-heading">
-  <h2 id="tools-heading">Tool stack</h2>
-  <p>Each status is honest: "Used" means a sample task on this site relies on it.</p>
+  <SectionHead id="tools-heading" num={num} label="Tools" title="Tool stack" note={'Each status is honest: "Used" means a sample task on this site relies on it.'} />
 
   {groups.map((group) => (
     <div class="group">
@@ -59,9 +60,9 @@ const statusText = (t: ToolView) =>
 
 <style>
   .group { margin-bottom: 1.5rem; }
-  h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+  h3 { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
   .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; align-items: flex-start; }
-  .chip { border: 1px solid var(--rule); padding: 0.35rem 0.75rem; }
+  .chip { border: 1px solid var(--rule); border-radius: 2px; background: var(--raised); padding: 0.4rem 0.8rem; }
   .chip[data-status="used"] { border-color: var(--accent); }
   summary, .chip:not(details) { display: flex; gap: 0.6rem; align-items: baseline; }
   summary { cursor: pointer; }

@@ -1,5 +1,12 @@
 ---
 // Four steps, in the order they happen, so they're an ordered list.
+import SectionHead from "./SectionHead.astro";
+
+interface Props {
+  num?: string;
+}
+const { num } = Astro.props;
+
 const points = [
   {
     title: "Clarify the goal",
@@ -21,7 +28,7 @@ const points = [
 ---
 
 <section id="how-i-work" aria-labelledby="work-heading">
-  <h2 id="work-heading">How I work</h2>
+  <SectionHead id="work-heading" num={num} label="Process" title="How I work" />
   <ol>
     {points.map((p) => (
       <li><h3>{p.title}</h3><p>{p.text}</p></li>
@@ -30,9 +37,21 @@ const points = [
 </section>
 
 <style>
-  ol { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }
+  ol { display: grid; gap: 1.5rem 2.5rem; padding: 0; margin: 0; list-style: none; counter-reset: step; }
   @media (min-width: 768px) { ol { grid-template-columns: 1fr 1fr; } }
-  li { border-top: 1px solid var(--rule); padding-top: 0.75rem; }
-  h3 { font-size: 1.35rem; margin-bottom: 0.25rem; }
+  li { padding-top: 0.25rem; }
+  h3 { font-size: 1.15rem; margin-bottom: 0.35rem; }
+  /* Step number above each title: 01, 02... */
+  h3::before {
+    counter-increment: step;
+    content: "0" counter(step);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+  }
   p { margin: 0; }
 </style>
