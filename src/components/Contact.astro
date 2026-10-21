@@ -30,10 +30,6 @@ const isReal = (v: string) => !v.startsWith("TODO:");
       <span class="label">LinkedIn</span>
       {isReal(profile.linkedin) ? <a href={profile.linkedin}>{profile.linkedin}</a> : <span>{profile.linkedin}</span>}
     </li>
-    <li>
-      <span class="label">GitHub</span>
-      {isReal(profile.github) ? <a href={profile.github}>{profile.github}</a> : <span>{profile.github}</span>}
-    </li>
     <li><span class="label">Time zone</span> {profile.location}, working {profile.hours}</li>
   </ul>
 </section>

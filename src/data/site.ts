@@ -51,7 +51,6 @@ export const profile = {
   contactInvite: "Have a messy brief, a chaotic calendar, or data that needs making sense of? Let's talk. I'm currently open to new opportunities and respond to emails within 24 hours.",
   email: "eddadena@nrold.com",
   linkedin: "https://www.linkedin.com/in/eddahdena",
-  github: "https://github.com/ekahumbu",
 };
 
 // Tuple form that Zod's z.enum() needs.
