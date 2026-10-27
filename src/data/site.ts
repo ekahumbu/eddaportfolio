@@ -35,17 +35,18 @@ export const profile = {
   // About.astro.
   about: {
     intro: [
-      "For over a decade, I've supported leaders and cross-functional teams by ensuring their operations, data, and schedules run smoothly, reliably, and efficiently. Today, I work as an Executive Assistant, Operations Coordinator, and Analyst, fully optimized for US and UK time zones.",
-      "My approach is built on context-first optimization. I know that well-run teams don't need a \"savior\" to tear down their systems. They need a trusted operator who can step in, understand why things are done a certain way, and then apply sharp judgment to make them even better.",
+      "For over a decade, I've worked with audit teams to analyze audit data and identify red flags, turning large, messy datasets into findings people could act on.",
+      "Today, I also manage internal data and CRMs that help audit directors and leadership keep track of their clients, their teams, and workflow expectations. That work sits where analysis meets operations, and it's the bridge I'm building on as I move into operational analytics and executive support.",
+      "My approach is context-first. Well-run teams don't need someone to tear down their systems. I start by understanding why things are done a certain way, then use the judgment I built in audit to suggest where they could run better.",
     ],
     points: [
       {
         title: "Rapid Integration",
-        text: "I quickly master your existing tools (Notion, Monday.com, Excel, etc.) and adapt to your team's communication style, ensuring a low-friction, high-trust onboarding.",
+        text: "I already work daily in Excel, Power BI, SharePoint, and Notion, and I'm building hands-on experience with HubSpot, Monday.com, and Make. I adapt to your tools and your team's communication style rather than asking you to adopt mine.",
       },
       {
         title: "Calibrated Recommendations",
-        text: "I don't implement blind changes. When I spot friction or waste, I analyze it, formulate a solution, and present a clear, data-backed recommendation for leadership approval. You make the call; I execute flawlessly.",
+        text: "Audit taught me to back every finding with evidence. When I spot friction or waste, I analyze it, propose a solution, and bring it to you for approval before anything changes. You make the call; I follow through.",
       },
       {
         title: "Uncompromising Quality",
@@ -53,15 +54,15 @@ export const profile = {
       },
       {
         title: "Proof of Work",
-        text: "To demonstrate my methodology without breaching confidentiality, I've built realistic, synthetic sample tasks. They show exactly how I apply operational judgment, structure complex work, and verify outputs. Explore them at nrold.com.",
+        text: "Because my day-to-day work is confidential, I've built realistic sample tasks with synthetic data to show how I would handle operations and executive-support work: how I structure it, apply judgment, and verify the output. Explore them at nrold.com.",
       },
     ],
   },
   // Hero: the headline (one array item per line) and the paragraphs under it.
   headline: ["Give me a loose brief.", "I'll hand back", "organized, checked work."],
   intro: [
-    "Hi, I'm Eddah Dena. I'm an Executive Assistant, Operations Coordinator, and Analyst based in Nairobi, fully aligned with US and UK time zones.",
-    "With over a decade of experience, I don't just execute tasks; I act as a strategic extension of your team. I quickly learn your existing systems and rhythms, identify hidden friction, and present clear, data-backed recommendations for your approval. Whether your operations are already well-oiled or rapidly scaling, I bring the judgment to optimize them and the discipline to execute flawlessly.",
+    "Hi, I'm Eddah Dena. I'm based in Nairobi, work across US and UK time zones, and focus on operational analytics and executive support.",
+    "For over a decade, I've analyzed audit data to spot red flags, and today I manage the internal data and CRMs that help audit leadership track clients, teams, and workflows. I'm now bringing that rigor to operations teams and the executives who lead them: learning your systems, spotting friction, and bringing clear, data-backed recommendations for your approval.",
   ],
   portrait: {
     src: "/media/eddah-portrait.webp",
