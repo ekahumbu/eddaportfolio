@@ -1,9 +1,9 @@
 ---
-title: "Clean a messy sales export and build a one-page dashboard"
+title: "Standardize a weekly sales export to improve leadership visibility"
 role: "Analyst"
 alsoShows: []
 skills: ["Data cleaning", "Excel and Power Query", "KPI reporting", "Dashboard design"]
-summary: "A messy weekly sales export cleaned in 11 logged steps, then shown as a one-page dashboard with a covering email."
+summary: "Applied a consistent 11-step cleaning process to ensure data integrity. Built a one-page dashboard and presented a brief summary of Q3 variances, enabling leadership to make informed decisions without digging into raw data."
 brief: "I need one page on Q3 for Monday's leadership meeting. Four things: are we on budget by channel, are DTC returns getting worse, is on-time shipping holding up before peak, and which channel is carrying us. Tom's export is messy, so clean it first and tell me what you fixed. Keep it to one page. Monday 8:00 AM ET at the latest."
 timeTaken: "2 h"
 tools: ["Excel"]

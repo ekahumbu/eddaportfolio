@@ -1,9 +1,9 @@
 ---
-title: "Minutes and an action tracker from a broken meeting transcript"
+title: "Transform meeting discussions into clear, accountable team alignment"
 role: "Executive support"
 alsoShows: []
 skills: ["Minute-taking", "Action tracking", "Confidentiality", "Clear writing"]
-summary: "A garbled auto-transcript turned into one-page minutes, a dated action tracker and a draft email for approval."
+summary: "Synthesized a meeting transcript into a concise one-page summary and a 13-item action tracker. Flagged 4 actions with missing or invalid due dates for the executive to confirm, so the broader team had clear, async next steps."
 brief: "It is Mon, Oct 12, 2026. The weekly leadership meeting ran 9:30–10:30 AM ET on Teams. My power went out at 9:40 AM, so I worked from the Teams auto-transcript, which had wrong speaker labels and misheard names."
 timeTaken: "About 2 h"
 tools: ["Excel", "Microsoft 365"]

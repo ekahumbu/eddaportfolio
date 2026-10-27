@@ -1,9 +1,9 @@
 ---
-title: "Rebuild a CEO's week after nine conflicting requests"
+title: "Proactively resolve complex calendar conflicts using executive priorities"
 role: "Executive support"
 alsoShows: []
 skills: ["Calendar management", "Prioritization", "Time zones", "Stakeholder messaging"]
-summary: "Nine requests, 18 clashes and a hard stop: a conflict log, a rebuilt week and the messages to send."
+summary: "Navigated nine overlapping requests by logging 18 conflicts, applying the executive's stated strategic priorities, and settling them in 14 documented decisions, with only 2 items sent to the CEO for approval, protecting the executive's focus time."
 brief: "It is Sat 3. Nine requests have landed for CEO Dana Whitfield's week of Mon 5. The board chair wants to move the Q3 board meeting to Wed 7, which knocks on to a VP interview, the sales pipeline review and Thursday's deep work."
 timeTaken: "2 h"
 tools: ["Excel"]

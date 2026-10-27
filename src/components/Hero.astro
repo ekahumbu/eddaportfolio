@@ -23,7 +23,7 @@ const year = new Date().getFullYear();
   <div class="grid">
     <div class="text">
       <h1 id="hero-heading">{lines.map((l) => <span class="line">{l}</span>)}</h1>
-      <p class="lead">{profile.tagline}</p>
+      {profile.intro.map((p) => <p class="lead">{p}</p>)}
 
       <p class="buttons">
         <a class="button primary" href="#tasks"><span aria-hidden="true">↓</span> See sample tasks</a>

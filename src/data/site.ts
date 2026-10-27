@@ -30,17 +30,39 @@ export const profile = {
   name: "Eddah Dena",
   location: "Nairobi (EAT, UTC+3)",
   hours: "US and UK hours",
-  // About section, one string per paragraph. The Build log link is added after
-  // the last paragraph in About.astro.
-  about: [
-    "Hi, I'm Eddah! I'm based in Nairobi and work flexibly across US and UK time zones.",
-    "For over a decade, I've helped teams make sense of messy financial data by turning it into clear reports and confident decisions.",
-    "Today, I bring that same clarity to my work as an Executive Assistant, Operations Coordinator, and Analyst. Give me a loose brief, and I'll hand back organized, thoroughly checked, and ready-to-use results.",
-    "To protect privacy, every sample here is a fictional scenario built on synthetic data.",
-  ],
-  // Hero: the headline (one array item per line) and the line under it.
+  // About section: intro paragraphs (the first is set large), then the
+  // highlighted points. The Build log link is added after the points in
+  // About.astro.
+  about: {
+    intro: [
+      "For over a decade, I've supported leaders and cross-functional teams by ensuring their operations, data, and schedules run smoothly, reliably, and efficiently. Today, I work as an Executive Assistant, Operations Coordinator, and Analyst, fully optimized for US and UK time zones.",
+      "My approach is built on context-first optimization. I know that well-run teams don't need a \"savior\" to tear down their systems. They need a trusted operator who can step in, understand why things are done a certain way, and then apply sharp judgment to make them even better.",
+    ],
+    points: [
+      {
+        title: "Rapid Integration",
+        text: "I quickly master your existing tools (Notion, Monday.com, Excel, etc.) and adapt to your team's communication style, ensuring a low-friction, high-trust onboarding.",
+      },
+      {
+        title: "Calibrated Recommendations",
+        text: "I don't implement blind changes. When I spot friction or waste, I analyze it, formulate a solution, and present a clear, data-backed recommendation for leadership approval. You make the call; I execute flawlessly.",
+      },
+      {
+        title: "Uncompromising Quality",
+        text: "I run every deliverable through a strict, 12-point pre-send QA checklist. You can trust that what I hand over is verified, accurate, and ready for immediate use.",
+      },
+      {
+        title: "Proof of Work",
+        text: "To demonstrate my methodology without breaching confidentiality, I've built realistic, synthetic sample tasks. They show exactly how I apply operational judgment, structure complex work, and verify outputs. Explore them at nrold.com.",
+      },
+    ],
+  },
+  // Hero: the headline (one array item per line) and the paragraphs under it.
   headline: ["Give me a loose brief.", "I'll hand back", "organized, checked work."],
-  tagline: "Executive Assistant, Operations Coordinator and Analyst in Nairobi, with over a decade of turning messy financial data into clear reports.",
+  intro: [
+    "Hi, I'm Eddah Dena. I'm an Executive Assistant, Operations Coordinator, and Analyst based in Nairobi, fully aligned with US and UK time zones.",
+    "With over a decade of experience, I don't just execute tasks; I act as a strategic extension of your team. I quickly learn your existing systems and rhythms, identify hidden friction, and present clear, data-backed recommendations for your approval. Whether your operations are already well-oiled or rapidly scaling, I bring the judgment to optimize them and the discipline to execute flawlessly.",
+  ],
   portrait: {
     src: "/media/eddah-portrait.webp",
     width: 640,

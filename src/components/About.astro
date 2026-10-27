@@ -10,9 +10,7 @@ interface Props {
 }
 const { num } = Astro.props;
 
-const [first, ...rest] = profile.about;
-const paragraphs = rest.slice(0, -1);
-const last = rest.at(-1);
+const [first, ...paragraphs] = profile.about.intro;
 ---
 
 <section id="about" aria-labelledby="about-heading">
@@ -21,7 +19,10 @@ const last = rest.at(-1);
   <div class="intro">
     <p class="story">{first}</p>
     {paragraphs.map((p) => <p>{p}</p>)}
-    <p>{last} Feel free to check out my <a href="/log">Build Log</a> to see what I'm learning along the way!</p>
+    <ul class="points">
+      {profile.about.points.map((pt) => <li><strong>{pt.title}:</strong> {pt.text}</li>)}
+    </ul>
+    <p>Feel free to check out my <a href="/log">Build Log</a> to see what I'm learning along the way!</p>
   </div>
 
   <ol class="journey">
@@ -42,6 +43,9 @@ const last = rest.at(-1);
 <style>
   .intro { max-width: var(--text); margin-bottom: 3rem; }
   .story { font-family: var(--font-story); font-size: clamp(1.5rem, 3.5vw, 1.9rem); line-height: 1.3; }
+  .points { list-style: none; padding: 0; margin: 1.5rem 0; }
+  .points li { position: relative; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+  .points li::before { content: "◆"; position: absolute; left: 0; top: 0.35em; font-size: 0.7em; color: var(--accent); }
 
   .journey { list-style: none; padding: 0; margin: 0; }
   .journey li {

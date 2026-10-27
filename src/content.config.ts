@@ -20,7 +20,7 @@ const tasks = defineCollection({
       role: z.enum(trackNames),
       alsoShows: z.array(z.enum(trackNames)).default([]),
       skills: z.array(z.string().min(1)).min(1).max(4),
-      summary: z.string().min(1).max(160),
+      summary: z.string().min(1).max(300),
       brief: z.string().min(1),
       timeTaken: z.string().min(1),
       tools: z.array(toolName),

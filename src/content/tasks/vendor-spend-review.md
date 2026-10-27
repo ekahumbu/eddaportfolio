@@ -1,9 +1,9 @@
 ---
-title: "Review 25 software subscriptions and find $18,601 a year in savings"
+title: "Conduct a proactive software audit to optimize operational spend"
 role: "Operations"
 alsoShows: ["Analyst"]
 skills: ["Spend analysis", "Billing-error detection", "Renewal planning", "Reconciliation"]
-summary: "A 25-tool subscription export reviewed for waste: $18,601 a year in savings and $2,707 in refunds, checked three ways."
+summary: "Systematically reviewed a 25-tool export to identify redundancies. Presented a phased savings plan of $18,601/year for leadership approval that excludes all peak-season tools."
 brief: "Dana wants us to find at least $12,000 a year in software and subscription savings without hurting peak season. Attached is the Q3 card and invoice export for every subscription, with the seat and usage counts IT pulled last week. Can you send me a one-page recommendation by Tuesday, Oct 20, 12:00 PM ET? Flag anything that looks like a billing error. We may be owed money."
 timeTaken: "90 min (time box)"
 tools: ["Excel"]
