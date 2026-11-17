@@ -1,0 +1,322 @@
+---
+import Base from "../layouts/Base.astro";
+import ToolStack from "../components/ToolStack.astro";
+import { getTasks, getTools } from "../lib/content";
+import { profile } from "../data/site";
+
+const [tasks, tools] = await Promise.all([getTasks(), getTools()]);
+const description =
+  "Eddah Dena is a Nairobi-based operational analyst with 15 years of audit, data and operations experience, available for remote work across US and UK time zones.";
+---
+
+<Base title={`Strategic Operations & Executive Support Analyst | ${profile.name}`} description={description}>
+  <section class="resume-page" aria-labelledby="resume-title">
+    <div class="resume-document">
+      <header class="resume-hero" data-reveal>
+        <p class="eyebrow">Eddah Dena <span aria-hidden="true">/</span> Nairobi, Kenya</p>
+        <h1 id="resume-title">Strategic Operations &amp; Executive Support Analyst</h1>
+        <p class="hero-deck">
+          Turning loose briefs, messy data, and complex calendars into organized, verified,
+          decision-ready work.
+        </p>
+        <p class="summary">
+          With 15 years at Kenya's Office of the Auditor-General, I turn complex audit, financial,
+          and operational data into the systems, trackers, dashboards, and workflows teams can act
+          on. I specialize in finding systemic friction, building reliable processes, and translating
+          evidence into decision-ready recommendations for leaders. Based in Nairobi (EAT, UTC+3),
+          I work remotely and asynchronously across US and UK time zones.
+        </p>
+        <div class="hero-meta" aria-label="Professional details">
+          <span>15 years in audit, data &amp; operations</span>
+          <span>Remote · US &amp; UK time zones</span>
+          <span>English · Nairobi (EAT)</span>
+        </div>
+        <div class="hero-actions">
+          <a class="button primary resume-download" href="/eddah-dena-resume.pdf" download>
+            Download ATS-Friendly PDF Résumé <span aria-hidden="true">↓</span>
+          </a>
+          <div class="contact-links">
+            <a href={`mailto:${profile.email}`}>Email</a>
+            <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="resume-section" aria-labelledby="pillars-heading" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">How I create leverage</p>
+          <h2 id="pillars-heading">From operational friction to dependable flow.</h2>
+        </div>
+        <div class="pillar-grid">
+          <article class="pillar">
+            <span class="pillar-number">01</span>
+            <h3>Operational Rigor</h3>
+            <p>Root-cause analysis, clear process documentation, data reconciliation, and a 12-point pre-send QA check that catches avoidable errors before work leaves my hands.</p>
+          </article>
+          <article class="pillar">
+            <span class="pillar-number">02</span>
+            <h3>Executive Alignment</h3>
+            <p>Thoughtful calendar coordination, concise asynchronous updates, stakeholder-ready messaging, and meeting notes that make decisions and next steps easy to find.</p>
+          </article>
+          <article class="pillar">
+            <span class="pillar-number">03</span>
+            <h3>Systems &amp; Workflow Design</h3>
+            <p>Practical CRM and case-management structures, workflow automation, and dashboards that give leaders a clearer view of capacity, clients, and progress.</p>
+          </article>
+          <article class="pillar">
+            <span class="pillar-number">04</span>
+            <h3>Decision-Ready Analysis</h3>
+            <p>Financial and operational data translated into reconciled reports, useful KPIs, exception views, and evidence-backed recommendations.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="resume-section experience" aria-labelledby="experience-heading" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Selected experience</p>
+          <h2 id="experience-heading">A record of making complex work clearer.</h2>
+          <p class="section-intro">Office of the Auditor-General, Kenya <span>·</span> Nairobi, Kenya</p>
+        </div>
+
+        <article class="experience-entry" data-reveal style="--reveal-delay: 80ms">
+          <header class="entry-heading">
+            <h3>Data Analyst</h3>
+            <p class="entry-date">Dec 2019 - Present</p>
+          </header>
+          <ul>
+            <li>Cut request turnaround from 3-5 days to one day by building team task tracking with Power Automate and SharePoint Lists.</li>
+            <li>Replaced weekly manual reconciliation of around 200 workbooks with a one-click Python workflow that appends new data and produces an ageing report of unmatched items.</li>
+            <li>Created a consistent classification for 14,300 audited entities by designing the client coding key and CRM database used in the case-management system and management reporting.</li>
+            <li>Reduced data-processing time by 54% by owning data preparation and quality checks for the case-management system.</li>
+            <li>Built Power BI and Excel dashboards that give management and team leaders one view of resources, timelines, and KPIs.</li>
+            <li>Helped pilot AI tools across five training courses and contributed to institutional AI, Knowledge Management, and Data Management policies.</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry" data-reveal style="--reveal-delay: 120ms">
+          <header class="entry-heading">
+            <h3>Audit Associate - Financial Audit</h3>
+            <p class="entry-date">Jul 2017 - Dec 2019</p>
+          </header>
+          <ul>
+            <li>Moved audit teams toward data-based testing by redesigning risk-assessment, substantive, and controls test programmes.</li>
+            <li>Scoped special audits by defining terms of reference and data requirements, and assessed financial reporting and operational processes through performance and value-for-money audits.</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry" data-reveal style="--reveal-delay: 160ms">
+          <header class="entry-heading">
+            <h3>Finance Officer - Finance Directorate</h3>
+            <p class="entry-date">May 2015 - Jul 2017</p>
+          </header>
+          <ul>
+            <li>Streamlined monthly bank, suspense, and cash-ledger reconciliations to support more timely reporting.</li>
+            <li>Created process registers that strengthened payment-voucher accountability, led data extraction from IFMIS (the government ERP for financial management and procurement), and wrote training manuals for auditors.</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry" data-reveal style="--reveal-delay: 200ms">
+          <header class="entry-heading">
+            <h3>Internal Audit Officer &amp; External Auditor</h3>
+            <p class="entry-date">Jul 2011 - May 2015</p>
+          </header>
+          <ul>
+            <li>Planned and performed process and systems audits, reported to senior management, and tracked recommendations through to closure.</li>
+          </ul>
+        </article>
+
+        <article class="experience-entry training-entry" data-reveal style="--reveal-delay: 240ms">
+          <header class="entry-heading">
+            <h3>Part-Time Trainer</h3>
+            <p class="entry-date">2021 - Present</p>
+          </header>
+          <p>AFROSAI-E · Kenya School of Government</p>
+          <ul>
+            <li>Designed and delivered an AI for HR Practitioners programme, and trained auditors from national audit institutions across Africa in data analytics, database auditing, and information systems audit.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="resume-section credentials" aria-labelledby="credentials-heading" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Continued learning</p>
+          <h2 id="credentials-heading">Certifications &amp; credentials</h2>
+          <p class="section-intro">Formal study that complements hands-on delivery. Add the award date and credential link or ID where the issuer provides one.</p>
+        </div>
+        <div class="credential-grid">
+          <article class="credential-card">
+            <p class="credential-type">Professional certificate</p>
+            <h3>Google Data Analytics Professional Certificate</h3>
+            <p class="issuer">Google / Coursera</p>
+            <dl><div><dt>Date earned</dt><dd>[Add date]</dd></div><div><dt>Credential</dt><dd>[Add link or ID]</dd></div></dl>
+          </article>
+          <article class="credential-card">
+            <p class="credential-type">Certificate</p>
+            <h3>Data &amp; Artificial Intelligence</h3>
+            <p class="issuer">Info-Tech Academy</p>
+            <dl><div><dt>Date earned</dt><dd>[Add date]</dd></div><div><dt>Credential</dt><dd>[Add link or ID]</dd></div></dl>
+          </article>
+          <article class="credential-card">
+            <p class="credential-type">Certificate</p>
+            <h3>Infrastructure &amp; Operations</h3>
+            <p class="issuer">Info-Tech Academy</p>
+            <dl><div><dt>Date earned</dt><dd>[Add date]</dd></div><div><dt>Credential</dt><dd>[Add link or ID]</dd></div></dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="resume-section education" aria-labelledby="education-heading" data-reveal>
+        <div class="section-heading">
+          <p class="eyebrow">Education</p>
+          <h2 id="education-heading">A foundation in analysis and accountability.</h2>
+        </div>
+        <ul class="education-list">
+          <li><strong>Postgraduate Diploma in Forensic Accounting</strong><span>Kenya School of Criminal Justice</span></li>
+          <li><strong>Bachelor of Arts in Economics</strong><span>Minor in Sociology · Egerton University</span></li>
+        </ul>
+      </section>
+
+      <div class="tool-stack" data-reveal>
+        <ToolStack tools={tools} tasks={tasks} />
+      </div>
+
+      <footer class="resume-close" data-reveal>
+        <p class="eyebrow">Ready to make work easier to trust?</p>
+        <p>Bring me the messy brief. I'll bring back a clear, checked next step.</p>
+        <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      </footer>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const revealItems = document.querySelectorAll<HTMLElement>("[data-reveal]");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.12 },
+    );
+
+    revealItems.forEach((item) => {
+      item.classList.add("reveal-pending");
+      observer.observe(item);
+    });
+  }
+</script>
+
+<style>
+  :global(main) > .resume-page { margin-top: 2.25rem; }
+
+  .resume-document { max-width: 56rem; margin-inline: auto; }
+  .resume-hero { padding: 3.5rem 0 3rem; border-bottom: 1px solid var(--rule); }
+  .resume-hero .eyebrow { margin-bottom: 1rem; }
+  .resume-page h1,
+  .resume-page h2 {
+    font-family: var(--font-story);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+  }
+  .resume-page h1 { max-width: 14ch; font-size: clamp(2.8rem, 7vw, 5rem); line-height: 0.98; }
+  .hero-deck { max-width: 42rem; margin: 1.5rem 0 1.25rem; font-size: clamp(1.2rem, 2.5vw, 1.55rem); line-height: 1.4; }
+  .summary { max-width: 47rem; color: var(--muted); font-size: 1rem; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: 1.5rem; color: var(--muted); font-family: var(--font-mono); font-size: 0.75rem; }
+  .hero-meta span + span::before { content: "/"; margin-right: 1.25rem; color: var(--rule); }
+  .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.25rem; margin-top: 1.75rem; }
+  .resume-download { padding: 0.9rem 1.2rem; }
+  .contact-links { display: flex; gap: 1rem; font-size: 0.9rem; }
+
+  .resume-section { padding: 4.5rem 0; border-bottom: 1px solid var(--rule); }
+  .section-heading { max-width: 44rem; margin-bottom: 2rem; }
+  .section-heading h2 { max-width: 22ch; margin-bottom: 0.8rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.08; }
+  .section-intro { color: var(--muted); font-size: 0.95rem; }
+  .section-intro span { padding-inline: 0.35rem; }
+
+  .pillar-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--rule); background: var(--rule); }
+  .pillar { min-height: 13rem; padding: 1.5rem; background: var(--paper); }
+  .pillar-number, .credential-type { color: var(--muted); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .pillar h3, .credential-card h3, .experience-entry h3 { margin: 0.8rem 0 0.5rem; font-size: 1.12rem; }
+  .pillar p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+  .experience-entry { padding: 1.6rem 0; border-top: 1px solid var(--rule); }
+  .entry-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .entry-heading h3 { margin: 0; }
+  .entry-date { flex: 0 0 auto; margin: 0; color: var(--muted); font-family: var(--font-mono); font-size: 0.75rem; }
+  .experience-entry ul { padding-left: 1.25rem; margin: 0.85rem 0 0; }
+  .experience-entry li { padding-left: 0.25rem; margin: 0.45rem 0; }
+  .training-entry > p { margin: 0.35rem 0; color: var(--muted); }
+
+  .credential-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; }
+  .credential-card { padding: 1.25rem; border: 1px solid var(--rule); background: var(--raised); }
+  .credential-card h3 { min-height: 2.7rem; }
+  .credential-card .issuer { color: var(--muted); font-size: 0.9rem; }
+  .credential-card dl { margin: 1rem 0 0; padding-top: 0.75rem; border-top: 1px solid var(--rule); font-size: 0.78rem; }
+  .credential-card dl div { display: flex; justify-content: space-between; gap: 0.5rem; margin-top: 0.35rem; }
+  .credential-card dt { color: var(--muted); }
+  .credential-card dd { margin: 0; text-align: right; }
+
+  .education-list { list-style: none; padding: 0; margin: 0; }
+  .education-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.9rem 0; border-top: 1px solid var(--rule); }
+  .education-list span { color: var(--muted); text-align: right; }
+  .tool-stack { padding: 4.5rem 0 0; }
+  .tool-stack :global(#tools) { margin-top: 0; }
+  .tool-stack :global(#tools h2) { font-family: var(--font-story); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; }
+  .resume-close { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+  .resume-close .eyebrow { flex-basis: 100%; }
+  .resume-close > p:not(.eyebrow) { margin: 0; font-family: var(--font-story); font-size: 1.4rem; }
+
+  .reveal-pending { opacity: 0; transform: translateY(12px); transition: opacity 550ms ease, transform 550ms ease; transition-delay: var(--reveal-delay, 0ms); }
+  .reveal-pending.is-visible { opacity: 1; transform: none; }
+
+  @media (max-width: 700px) {
+    .resume-hero { padding-top: 2.5rem; }
+    .resume-section, .tool-stack { padding-top: 3rem; padding-bottom: 3rem; }
+    .pillar-grid, .credential-grid { grid-template-columns: 1fr; }
+    .pillar { min-height: auto; }
+    .entry-heading { display: block; }
+    .entry-date { margin-top: 0.3rem; }
+    .education-list li { flex-direction: column; gap: 0.2rem; }
+    .education-list span { text-align: left; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-pending { opacity: 1; transform: none; transition: none; }
+  }
+
+  @page { size: auto; margin: 0.6in; }
+  @media print {
+    :global(html), :global(body) { background: #fff !important; color: #000 !important; color-scheme: light; }
+    :global(body) { font-size: 10pt; }
+    :global(body::before), :global(.site-header), :global(.site-footer), :global(.skip-link), .resume-download { display: none !important; }
+    :global(main) { max-width: none !important; padding: 0 !important; }
+    :global(main > .resume-page) { margin: 0 !important; }
+    .resume-page, .pillar, .credential-card { background: #fff !important; color: #000 !important; }
+    .resume-page { max-width: none; font-size: 9.5pt; }
+    .resume-hero { padding: 0 0 1.1rem; }
+    .resume-page h1 { max-width: none; font-size: 30pt; }
+    .resume-page h2 { font-size: 21pt; }
+    .resume-page h3 { font-size: 11pt; }
+    .resume-section { padding: 1.3rem 0; }
+    .section-heading { margin-bottom: 1rem; }
+    .pillar-grid, .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pillar { min-height: 0; padding: 0.8rem; }
+    .credential-card { padding: 0.8rem; }
+    .experience-entry { padding: 0.8rem 0; }
+    .resume-page :global(.label), .summary, .pillar p, .credential-card .issuer,
+    .entry-date, .section-intro, .education-list span, .resume-close a { color: #222 !important; }
+    .resume-page a { color: #000 !important; text-decoration: none; }
+    .resume-page :global(.chip), .resume-page :global(.credential-card), .resume-page :global(.pillar) { border-color: #bbb !important; }
+    .experience-entry, .pillar, .credential-card, .education-list li { break-inside: avoid; page-break-inside: avoid; }
+    h1, h2, h3 { break-after: avoid-page; }
+    .reveal-pending { opacity: 1 !important; transform: none !important; }
+    .resume-close { margin-top: 1rem; }
+  }
+</style>

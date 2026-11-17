@@ -31,9 +31,10 @@ const imageUrl = abs("/og.png");
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    {bare && <meta name="robots" content="noindex" />}
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow, noimageindex" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
+    <title>Eddah Dena | Operations &amp; Executive Support</title>
     <link rel="canonical" href={pageUrl} />
 
     <!-- Link previews (LinkedIn, Slack, WhatsApp, email). The image is made by scripts/make-og-image.mjs. -->

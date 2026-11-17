@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+
+# Specifically block the Internet Archive (Wayback Machine)
+User-agent: archive.org_bot
+Disallow: /
